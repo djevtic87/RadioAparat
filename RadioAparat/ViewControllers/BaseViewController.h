@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BaseViewController.h
 //  RadioAparat
 //
 //  Created by Dejan Jevtic on 11/10/17.
@@ -8,8 +8,5 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-
+@interface BaseViewController : UIViewController
 @end
-

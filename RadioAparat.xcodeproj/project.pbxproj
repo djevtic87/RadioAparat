@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		D624BF051FB5A7880004C97E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D624BF041FB5A7880004C97E /* AppDelegate.m */; };
-		D624BF081FB5A7880004C97E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D624BF071FB5A7880004C97E /* ViewController.m */; };
 		D624BF0B1FB5A7880004C97E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D624BF091FB5A7880004C97E /* Main.storyboard */; };
 		D624BF0D1FB5A7880004C97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0C1FB5A7880004C97E /* Assets.xcassets */; };
 		D624BF101FB5A7880004C97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0E1FB5A7880004C97E /* LaunchScreen.storyboard */; };
 		D624BF131FB5A7890004C97E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D624BF121FB5A7890004C97E /* main.m */; };
+		D6A2D4A21FB5B5DB0085802C /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4A11FB5B5DB0085802C /* ProgramViewController.m */; };
+		D6A2D4A51FB5B5F60085802C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4A41FB5B5F60085802C /* ChatViewController.m */; };
+		D6A2D4A81FB5B6070085802C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4A71FB5B6070085802C /* ProfileViewController.m */; };
+		D6A2D4AB1FB5B6150085802C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4AA1FB5B6150085802C /* SettingsViewController.m */; };
+		D6A2D4AF1FB5D1760085802C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4AE1FB5D1760085802C /* BaseViewController.m */; };
 		EC894AD7FCE26A5CF0E7330B /* libPods-RadioAparat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F95553D093137C86CA7B14B /* libPods-RadioAparat.a */; };
 /* End PBXBuildFile section */
 
@@ -23,13 +27,22 @@
 		D624BF001FB5A7880004C97E /* RadioAparat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioAparat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D624BF031FB5A7880004C97E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D624BF041FB5A7880004C97E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D624BF061FB5A7880004C97E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D624BF071FB5A7880004C97E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D624BF0A1FB5A7880004C97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D624BF0C1FB5A7880004C97E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D624BF0F1FB5A7880004C97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D624BF111FB5A7880004C97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D624BF121FB5A7890004C97E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D6A2D4A01FB5B5DB0085802C /* ProgramViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgramViewController.h; sourceTree = "<group>"; };
+		D6A2D4A11FB5B5DB0085802C /* ProgramViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgramViewController.m; sourceTree = "<group>"; };
+		D6A2D4A31FB5B5F60085802C /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		D6A2D4A41FB5B5F60085802C /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		D6A2D4A61FB5B6070085802C /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		D6A2D4A71FB5B6070085802C /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		D6A2D4A91FB5B6150085802C /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		D6A2D4AA1FB5B6150085802C /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		D6A2D4AD1FB5D1760085802C /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		D6A2D4AE1FB5D1760085802C /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		D6A2D4B01FB5D2C80085802C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +60,7 @@
 		075E6FB2BDD5DDEE616FE6FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D6A2D4B01FB5D2C80085802C /* AVFoundation.framework */,
 				8F95553D093137C86CA7B14B /* libPods-RadioAparat.a */,
 			);
 			name = Frameworks;
@@ -84,15 +98,31 @@
 			children = (
 				D624BF031FB5A7880004C97E /* AppDelegate.h */,
 				D624BF041FB5A7880004C97E /* AppDelegate.m */,
-				D624BF061FB5A7880004C97E /* ViewController.h */,
-				D624BF071FB5A7880004C97E /* ViewController.m */,
 				D624BF091FB5A7880004C97E /* Main.storyboard */,
 				D624BF0C1FB5A7880004C97E /* Assets.xcassets */,
 				D624BF0E1FB5A7880004C97E /* LaunchScreen.storyboard */,
 				D624BF111FB5A7880004C97E /* Info.plist */,
 				D624BF121FB5A7890004C97E /* main.m */,
+				D6A2D4AC1FB5B61D0085802C /* ViewControllers */,
 			);
 			path = RadioAparat;
+			sourceTree = "<group>";
+		};
+		D6A2D4AC1FB5B61D0085802C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D6A2D4AD1FB5D1760085802C /* BaseViewController.h */,
+				D6A2D4AE1FB5D1760085802C /* BaseViewController.m */,
+				D6A2D4A01FB5B5DB0085802C /* ProgramViewController.h */,
+				D6A2D4A11FB5B5DB0085802C /* ProgramViewController.m */,
+				D6A2D4A31FB5B5F60085802C /* ChatViewController.h */,
+				D6A2D4A41FB5B5F60085802C /* ChatViewController.m */,
+				D6A2D4A61FB5B6070085802C /* ProfileViewController.h */,
+				D6A2D4A71FB5B6070085802C /* ProfileViewController.m */,
+				D6A2D4A91FB5B6150085802C /* SettingsViewController.h */,
+				D6A2D4AA1FB5B6150085802C /* SettingsViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,9 +250,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D624BF081FB5A7880004C97E /* ViewController.m in Sources */,
+				D6A2D4A21FB5B5DB0085802C /* ProgramViewController.m in Sources */,
 				D624BF131FB5A7890004C97E /* main.m in Sources */,
+				D6A2D4A51FB5B5F60085802C /* ChatViewController.m in Sources */,
+				D6A2D4AB1FB5B6150085802C /* SettingsViewController.m in Sources */,
 				D624BF051FB5A7880004C97E /* AppDelegate.m in Sources */,
+				D6A2D4AF1FB5D1760085802C /* BaseViewController.m in Sources */,
+				D6A2D4A81FB5B6070085802C /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

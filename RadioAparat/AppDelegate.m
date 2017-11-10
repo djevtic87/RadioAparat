@@ -7,6 +7,14 @@
 //
 
 #import "AppDelegate.h"
+//model
+#import "YALTabBarItem.h"
+
+//controller
+#import "YALFoldingTabBarController.h"
+
+//helpers
+#import "YALAnimatingTabBarConstants.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +24,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [self setupYALTabBarControllerAndAudioPlayer];
     return YES;
 }
 
@@ -45,6 +54,46 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setupYALTabBarControllerAndAudioPlayer {
+    YALFoldingTabBarController *tabBarController = (YALFoldingTabBarController *) self.window.rootViewController;
+    
+    //prepare leftBarItems
+    YALTabBarItem *item1 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"nearby_icon"]
+                                                      leftItemImage:nil
+                                                     rightItemImage:[UIImage imageNamed:@"play_icon"]];
+    YALTabBarItem *item2 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"chats_icon"]
+                                                      leftItemImage:[UIImage imageNamed:@"new_chat_icon"]
+                                                     rightItemImage:[UIImage imageNamed:@"play_icon"]];
+
+    tabBarController.leftBarItems = @[item1, item2];
+    
+    //prepare rightBarItems
+    YALTabBarItem *item3 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"profile_icon"]
+                                                      leftItemImage:[UIImage imageNamed:@"edit_icon"]
+                                                     rightItemImage:[UIImage imageNamed:@"play_icon"]];
+    YALTabBarItem *item4 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"settings_icon"]
+                                                      leftItemImage:nil
+                                                     rightItemImage:[UIImage imageNamed:@"play_icon"]];
+    
+    tabBarController.rightBarItems = @[item3, item4];
+    
+    tabBarController.centerButtonImage = [UIImage imageNamed:@"plus_icon"];
+    
+    tabBarController.selectedIndex = 0;
+    
+    //customize tabBarView
+    tabBarController.tabBarView.extraTabBarItemHeight = YALExtraTabBarItemsDefaultHeight;
+    tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset;
+    tabBarController.tabBarView.backgroundColor = [UIColor colorWithRed:94.f/255.f green:91.f/255.f blue:149.f/255.f alpha:1.f];
+    tabBarController.tabBarView.tabBarColor = [UIColor colorWithRed:72.f/255.f green:211.f/255.f blue:178.f/255.f alpha:1.f];
+    tabBarController.tabBarViewHeight = YALTabBarViewDefaultHeight;
+    tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
+    tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
+    
+    //
+    self.player = [AVPlayer playerWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
 }
 
 
