@@ -13,9 +13,13 @@
 		D624BF0D1FB5A7880004C97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0C1FB5A7880004C97E /* Assets.xcassets */; };
 		D624BF101FB5A7880004C97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0E1FB5A7880004C97E /* LaunchScreen.storyboard */; };
 		D624BF131FB5A7890004C97E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D624BF121FB5A7890004C97E /* main.m */; };
+		EC894AD7FCE26A5CF0E7330B /* libPods-RadioAparat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F95553D093137C86CA7B14B /* libPods-RadioAparat.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74B5C052705F30BC04380824 /* Pods-RadioAparat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioAparat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RadioAparat/Pods-RadioAparat.debug.xcconfig"; sourceTree = "<group>"; };
+		8F95553D093137C86CA7B14B /* libPods-RadioAparat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioAparat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1253FAD58DCE07D34C112C6 /* Pods-RadioAparat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RadioAparat.release.xcconfig"; path = "Pods/Target Support Files/Pods-RadioAparat/Pods-RadioAparat.release.xcconfig"; sourceTree = "<group>"; };
 		D624BF001FB5A7880004C97E /* RadioAparat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RadioAparat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D624BF031FB5A7880004C97E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D624BF041FB5A7880004C97E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC894AD7FCE26A5CF0E7330B /* libPods-RadioAparat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075E6FB2BDD5DDEE616FE6FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F95553D093137C86CA7B14B /* libPods-RadioAparat.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C0B4251E06D97571458FAE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74B5C052705F30BC04380824 /* Pods-RadioAparat.debug.xcconfig */,
+				A1253FAD58DCE07D34C112C6 /* Pods-RadioAparat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D624BEF71FB5A7880004C97E = {
 			isa = PBXGroup;
 			children = (
 				D624BF021FB5A7880004C97E /* RadioAparat */,
 				D624BF011FB5A7880004C97E /* Products */,
+				6C0B4251E06D97571458FAE2 /* Pods */,
+				075E6FB2BDD5DDEE616FE6FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +102,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D624BF161FB5A7890004C97E /* Build configuration list for PBXNativeTarget "RadioAparat" */;
 			buildPhases = (
+				CCA83410C8A045BCD1CEBF80 /* [CP] Check Pods Manifest.lock */,
 				D624BEFC1FB5A7880004C97E /* Sources */,
 				D624BEFD1FB5A7880004C97E /* Frameworks */,
 				D624BEFE1FB5A7880004C97E /* Resources */,
+				48A1F9E9A8517188DA8827BF /* [CP] Embed Pods Frameworks */,
+				933416C685309A57D961FF29 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		48A1F9E9A8517188DA8827BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioAparat/Pods-RadioAparat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		933416C685309A57D961FF29 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RadioAparat/Pods-RadioAparat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCA83410C8A045BCD1CEBF80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RadioAparat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D624BEFC1FB5A7880004C97E /* Sources */ = {
@@ -276,9 +354,11 @@
 		};
 		D624BF171FB5A7890004C97E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74B5C052705F30BC04380824 /* Pods-RadioAparat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RadioAparat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioaparat.RadioAparat;
@@ -289,9 +369,11 @@
 		};
 		D624BF181FB5A7890004C97E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1253FAD58DCE07D34C112C6 /* Pods-RadioAparat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = RadioAparat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioaparat.RadioAparat;
