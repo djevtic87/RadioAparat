@@ -23,7 +23,7 @@
                         <constraint firstAttribute="width" secondItem="i2A-AI-Aqb" secondAttribute="height" multiplier="71:66" id="fXm-6q-FBi"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCv-ZG-F7h">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCv-ZG-F7h">
                     <rect key="frame" x="16" y="23" width="267" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="ViW-Mk-zRS"/>
@@ -44,6 +44,9 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="titleLabel" destination="FCv-ZG-F7h" id="Spi-HQ-tlM"/>
+            </connections>
             <point key="canvasLocation" x="-29" y="-35"/>
         </view>
     </objects>

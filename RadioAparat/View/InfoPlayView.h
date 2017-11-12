@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InfoPlayView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

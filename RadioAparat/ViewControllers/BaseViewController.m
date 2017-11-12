@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "YALFoldingTabBar.h"
 #import "AppDelegate.h"
+#import "MainTabBarControllerViewController.h"
 
 @interface BaseViewController ()
 
@@ -28,11 +29,12 @@
 
 - (void)tabBarDidSelectExtraRightItem:(YALFoldingTabBar *)tabBar {
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    if ((appDelegate.player.rate != 0) && (appDelegate.player.error == nil)) {
-        [appDelegate.player pause];
+    MainTabBarControllerViewController *tabBarController = (MainTabBarControllerViewController *) appDelegate.window.rootViewController;
+    if ((tabBarController.player.rate != 0) && (tabBarController.player.error == nil)) {
+        [tabBarController.player pause];
         [tabBar changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"play_icon"]];
     } else {
-        [appDelegate.player play];
+        [tabBarController.player play];
         [tabBar changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"pause_icon"]];
     }
 }

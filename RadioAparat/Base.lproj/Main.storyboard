@@ -42,12 +42,13 @@
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="-191.1544227886057"/>
         </scene>
-        <!--Folding Tab Bar Controller-->
+        <!--Main Tab Bar Controller View Controller-->
         <scene sceneID="sOQ-KQ-E4U">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="olv-3l-2rt" customClass="YALFoldingTabBarController" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="olv-3l-2rt" customClass="MainTabBarControllerViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bAP-hr-4gy" customClass="YALCustomHeightTabBar">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
