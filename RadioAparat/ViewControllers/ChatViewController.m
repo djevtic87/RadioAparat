@@ -16,7 +16,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+//    self.productURL = @"https://service7.rumbletalk.net/eC71@d@:/";
+//    
+//    NSURL *url = [NSURL URLWithString:self.productURL];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    
+//    
+//    _webView = [[WKWebView alloc] init];
+//    [_webView loadRequest:request];
+//    _webView.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y + [UIApplication sharedApplication].statusBarFrame.size.height, self.view.frame.size.width, self.view.frame.size.height - self.tabBarController.view.frame.size.height);
+//    [self.view addSubview:_webView];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -40,7 +40,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KmP-vl-VTS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="-191"/>
+            <point key="canvasLocation" x="853.60000000000002" y="-191.1544227886057"/>
         </scene>
         <!--Folding Tab Bar Controller-->
         <scene sceneID="sOQ-KQ-E4U">

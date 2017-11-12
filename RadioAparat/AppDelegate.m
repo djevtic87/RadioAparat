@@ -15,6 +15,7 @@
 
 //helpers
 #import "YALAnimatingTabBarConstants.h"
+#import "InfoPlayView.h"
 
 @interface AppDelegate ()
 
@@ -84,7 +85,7 @@
     tabBarController.selectedIndex = 0;
     
     //customize tabBarView
-    tabBarController.tabBarView.extraTabBarItemHeight = YALExtraTabBarItemsDefaultHeight;
+    tabBarController.tabBarView.extraTabBarItemHeight = 60.f;//YALExtraTabBarItemsDefaultHeight;
     tabBarController.tabBarView.offsetForExtraTabBarItems = YALForExtraTabBarItemsDefaultOffset;
     tabBarController.tabBarView.backgroundColor = [UIColor colorWithRed:94.f/255.f green:91.f/255.f blue:149.f/255.f alpha:1.f];
     tabBarController.tabBarView.tabBarColor = [UIColor colorWithRed:72.f/255.f green:211.f/255.f blue:178.f/255.f alpha:1.f];
@@ -92,8 +93,39 @@
     tabBarController.tabBarView.tabBarViewEdgeInsets = YALTabBarViewHDefaultEdgeInsets;
     tabBarController.tabBarView.tabBarItemsEdgeInsets = YALTabBarViewItemsDefaultEdgeInsets;
     
+    CGRect rect = tabBarController.view.frame;
+    rect.size.height = tabBarController.tabBar.frame.size.height;
+    rect.origin.y = tabBarController.view.frame.size.height - tabBarController.tabBar.frame.size.height - rect.size.height;
+    
+    InfoPlayView *infoPlayView = [[[NSBundle mainBundle] loadNibNamed:@"InfoPlayView" owner:nil options:nil] lastObject];
+    infoPlayView.frame = rect;
+    
+    [tabBarController.view addSubview:infoPlayView];
+    
     //
     self.player = [AVPlayer playerWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
+    
+    Dodaj Jedan controller kao sub klasu YALFoldingTabBarController.
+    Za dobavljanje slika i informacija o pesmi koristi.
+    // Set the Last.fm session info
+    [LastFm sharedInstance].apiKey = @"xxx";
+    [LastFm sharedInstance].apiSecret = @"xxx";
+    [LastFm sharedInstance].session = session;
+    [LastFm sharedInstance].username = username;
+    
+    // Get artist info
+    [[LastFm sharedInstance] getInfoForArtist:@"Pink Floyd" successHandler:^(NSDictionary *result) {
+        NSLog(@"result: %@", result);
+    } failureHandler:^(NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
+    
+    // Scrobble a track
+    [[LastFm sharedInstance] sendScrobbledTrack:@"Wish You Were Here" byArtist:@"Pink Floyd" onAlbum:@"Wish You Were Here" withDuration:534 atTimestamp:(int)[[NSDate date] timeIntervalSince1970] successHandler:^(NSDictionary *result) {
+        NSLog(@"result: %@", result);
+    } failureHandler:^(NSError *error) {
+        NSLog(@"error: %@", error);
+    }];
 }
 
 

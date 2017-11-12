@@ -3,89 +3,166 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0029D055B978B6B7DF11B671473C634F /* YALCustomHeightTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = A6F1343195249757DBF6AED754CCD8CC /* YALCustomHeightTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0155BB95B37AD243C82FDE139181402A /* CATransaction+TransactionWithAnimationsAndCompletion.h in Headers */ = {isa = PBXBuildFile; fileRef = C50EAEA211DD88CC5F383DEECB33A6E2 /* CATransaction+TransactionWithAnimationsAndCompletion.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0999FFB22CC58FE5491068D2305FA066 /* YALSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEF4EAC555985A38B3E2A5E16A19DF5 /* YALSpringAnimation.m */; };
-		136FB4D4470CA4325C483A46F998BF4B /* FoldingTabBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 937432392F2705A850C7DEFF92ABF5F3 /* FoldingTabBar-dummy.m */; };
-		1E9FE05A39C77581FE9FCA93F52075AB /* YALCustomHeightTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FF257F00E306FDA4EBD526FE58BCD07 /* YALCustomHeightTabBar.m */; };
-		25C04A8963C2E5160C347C6500998874 /* YALAnimatingTabBarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E83B6EF561B0E992F4463FA252DF6B7 /* YALAnimatingTabBarConstants.m */; };
-		28647F67665615EB37C9202F1331E215 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
-		307D31380EBF1BA22A561CE2E207044F /* YALSpringAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = E362EB3AAD6175215C23F3F0C3487945 /* YALSpringAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		313B9C271A53586A1E0BEFA6588BC87A /* CAAnimation+YALTabBarViewAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E5575BC24C3D8E9D1E6971D29E7D298 /* CAAnimation+YALTabBarViewAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3FAAF30A2A84420616D292768101ADE0 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 81DFC167781281EFF494C4622F1116CC /* Info.plist */; };
-		4FEC9906B8CAC645FA04FDA6D67EE9C8 /* YALTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E263E2EA2989B8C2A1179A51D786691 /* YALTabBarItem.m */; };
-		56A55296BBED77113F5E644EA5C78CAB /* YALFoldingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74290D4796802DC127CF42B4A57AA836 /* YALFoldingTabBarController.m */; };
-		6AE41AE80DB2D02033ABFEC17BB5AE69 /* YALFoldingTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7530FF817E78F84FE7BE19F7DECEF8 /* YALFoldingTabBar.m */; };
-		7C672C2632FAAC4D8896C3D2B7BE89E2 /* YALFoldingTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 75CF81412F72D75AE45F63148C764B12 /* YALFoldingTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		804ADAEF3403A128DA350A757AE1D878 /* CAAnimation+YALTabBarViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6FC7D75DF424D09BE8B9CD085C3228 /* CAAnimation+YALTabBarViewAnimations.m */; };
-		B3F56AE2484F4A198D97F2A980AE82B2 /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 323C0A6CB1ADFB24DB3026307E0B7EC2 /* CATransaction+TransactionWithAnimationsAndCompletion.m */; };
-		BBC194F8E9967BDDB70D10286FD828D2 /* YALTabBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = EFBB309B8961EC89A16713D5637435B8 /* YALTabBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BC673C70F61AD77FD287F947C5115450 /* YALFoldingTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1D2430AB087E0CAB42B1307D8D1B93 /* YALFoldingTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0029D055B978B6B7DF11B671473C634F /* YALCustomHeightTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 17E00176EB629867FD94C4E25AE8ACA8 /* YALCustomHeightTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0155BB95B37AD243C82FDE139181402A /* CATransaction+TransactionWithAnimationsAndCompletion.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E4E52FF6E845FA7AD6EF8705314DBD1 /* CATransaction+TransactionWithAnimationsAndCompletion.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0999FFB22CC58FE5491068D2305FA066 /* YALSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 724DE318F8A83D5E7D1571BBDCEE25B1 /* YALSpringAnimation.m */; };
+		111DCA03B86CF5F4EAA2EE91F0F1D7FC /* DDXMLPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A4019AF084D216C53514FE8C90AC1D2 /* DDXMLPrivate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		136FB4D4470CA4325C483A46F998BF4B /* FoldingTabBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5EF7CE05BDF0CEDF71866F5AC141948 /* FoldingTabBar-dummy.m */; };
+		1CB2F9ACA1D40F1709590B0281F737B1 /* DDXMLNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 292D4745104105C689D9F41C0CC2A601 /* DDXMLNode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E9FE05A39C77581FE9FCA93F52075AB /* YALCustomHeightTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C37FA83928FDABF06992B34B9BA6CB /* YALCustomHeightTabBar.m */; };
+		218D50C609EA9B60CA0B33DA062BB34E /* DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BB1C96362906E6A8B2D1062141FCEB2 /* DDXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		25C04A8963C2E5160C347C6500998874 /* YALAnimatingTabBarConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3E01D2902F7533DFB0BBB602502159 /* YALAnimatingTabBarConstants.m */; };
+		2F2D4966B629B19CDC19D30EEF64F414 /* LastFm.h in Headers */ = {isa = PBXBuildFile; fileRef = 5279F11B36EAE5D7CB5FC67B4D6A4C27 /* LastFm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		307D31380EBF1BA22A561CE2E207044F /* YALSpringAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DCA5E0EEB3B271334A81DA3F1BF3256 /* YALSpringAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		313B9C271A53586A1E0BEFA6588BC87A /* CAAnimation+YALTabBarViewAnimations.h in Headers */ = {isa = PBXBuildFile; fileRef = E7D98455A104CF5452EBF32AF3B1CA22 /* CAAnimation+YALTabBarViewAnimations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FAAF30A2A84420616D292768101ADE0 /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 04D39F581308B63F7DEC8FE2663A5F73 /* Info.plist */; };
+		4B1237EB688AA8A21ED8731772D7E9B2 /* DDXMLElementAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B2A03BDAC55F4D864EDC8878C3AE25B /* DDXMLElementAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FE5AF43526F3EDC595893FA6D564EEE /* DDXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = B2D3DD16EE98BE50AEF105B8AB0960B4 /* DDXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FEC9906B8CAC645FA04FDA6D67EE9C8 /* YALTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDEC515C6E691FD3B40373D13E76F68 /* YALTabBarItem.m */; };
+		50067B03D41431E6CDFE0E2AB3876CC4 /* DDXMLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = 963A2EE135183524AB1B655B4E869336 /* DDXMLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53E272ED4B49CFCD4747239118737E33 /* KissXML-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F2C8CF5EB66849386D403CE0CEAE6A /* KissXML-dummy.m */; };
+		56A55296BBED77113F5E644EA5C78CAB /* YALFoldingTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1425D7E4F185E7DADD749AA2B261B0 /* YALFoldingTabBarController.m */; };
+		5E840CA1A7C4643FA46B2CC968FC02C8 /* LastFm.m in Sources */ = {isa = PBXBuildFile; fileRef = E8C70B3A852C7A85FF50AF11241407DA /* LastFm.m */; };
+		65234587759C92B9F173EE7E1033FA1E /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = CD72283647C80916164A5B6F23F22073 /* DDXMLDocument.m */; };
+		68ADF1672D1CB3B3B7E51E36062B24B4 /* Pods-RadioAparat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD534E578DE4CE6061844ED9B820695 /* Pods-RadioAparat-dummy.m */; };
+		6AE41AE80DB2D02033ABFEC17BB5AE69 /* YALFoldingTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FC889E0DE5F2C5E35A1FAFBD7BB3F05D /* YALFoldingTabBar.m */; };
+		6B187BA38E46A5FC4010B4C1A7A602A1 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDCB74EF2D98B699119439DEF8661C6 /* DDXMLElementAdditions.m */; };
+		6D371E1FE3EAAD792216800B6FEF36DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
+		7C672C2632FAAC4D8896C3D2B7BE89E2 /* YALFoldingTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F807AE7F246B7553D4B51460F9D483F /* YALFoldingTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		804ADAEF3403A128DA350A757AE1D878 /* CAAnimation+YALTabBarViewAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 98BB127E2DFFA6B61D81393D637AEF68 /* CAAnimation+YALTabBarViewAnimations.m */; };
+		879C0641FCD8E685B9B2C9300E45DF32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
+		B3F56AE2484F4A198D97F2A980AE82B2 /* CATransaction+TransactionWithAnimationsAndCompletion.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E43DD3495AFF7AC038E8D1BAF8D5B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m */; };
+		BBC194F8E9967BDDB70D10286FD828D2 /* YALTabBarItem.h in Headers */ = {isa = PBXBuildFile; fileRef = AA17247A223FE28A05E61D56620F2C42 /* YALTabBarItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC673C70F61AD77FD287F947C5115450 /* YALFoldingTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = 959DB691733E4F8AACA527CC26EE813F /* YALFoldingTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1BFD3D103BCB96C1A07E43F97669C0C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7751D4D791D1183FB66D3CCA52CD8E /* QuartzCore.framework */; };
+		C48DC1D39FD9444D6605233D57340F28 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
+		C7551CE17744BD708A6BC45430D53EDF /* LastFm-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C132B93AD2720DBA46F390CDD41C3494 /* LastFm-dummy.m */; };
 		D348F37EBA07624C8CE792D868C0E99C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */; };
-		DB8BA42651E6A73E985B544FC5EA0548 /* Pods-RadioAparat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECD534E578DE4CE6061844ED9B820695 /* Pods-RadioAparat-dummy.m */; };
+		DEBDCE400FD4C8A37F114F1C0C9B9315 /* NSString+DDXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 515979BD7171897221769E897E306961 /* NSString+DDXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E437B5BA7B4DB7A2C212FC63CA89CB28 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FFC33C37CB58B0B749771D5A04775899 /* DDXMLElement.m */; };
 		E6EF146458CC47F0AD226687FB5234FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3917A50EB224EEDBC66971700D698782 /* UIKit.framework */; };
-		F75EA978746591FB23F23464CFC9659E /* FoldingTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 08E3E403E4D8E0728F794C96B32C2B19 /* FoldingTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB88C26C7FC1EBC9C53BCAD3D9B62A03 /* YALAnimatingTabBarConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = BF39E58E9D23D73BF6443DA7E8BEC91F /* YALAnimatingTabBarConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E807A15EC3B3E6EBE9D7E3E9DC8F48B4 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 336B565A62C880C23637E27D44BDB86D /* DDXMLNode.m */; };
+		F75EA978746591FB23F23464CFC9659E /* FoldingTabBar.h in Headers */ = {isa = PBXBuildFile; fileRef = F11EC3FD67DFA5B7CCB33DCB681EF928 /* FoldingTabBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB88C26C7FC1EBC9C53BCAD3D9B62A03 /* YALAnimatingTabBarConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF596DCD01064BD6678202853DB3AC1 /* YALAnimatingTabBarConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEC2E1B29D1955CCD6979334FA8159C6 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = F3D46B0A395A05FC4F46C5389C4A264B /* NSString+DDXML.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BE274E384016962C3F55D28DA312C1F0 /* PBXContainerItemProxy */ = {
+		0839AE982BF5D0A42D6BA2BFA2CD07AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3B73143539FB8DFDC1A8FBDCA55B0A8E;
 			remoteInfo = FoldingTabBar;
 		};
+		6EAF973684364DE408963FD593099D39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D14991DBD8D9B893E4CFB910306ACB13;
+			remoteInfo = KissXML;
+		};
+		D16FD6C50C3769FAC8726984EEE70764 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D14991DBD8D9B893E4CFB910306ACB13;
+			remoteInfo = KissXML;
+		};
+		DA914F52F201F10B43D2F986BAF7452A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0F5E68DF82AD5CBBCCD1D9B9C63AB32B;
+			remoteInfo = LastFm;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08E3E403E4D8E0728F794C96B32C2B19 /* FoldingTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FoldingTabBar.h; path = FoldingTabBar/Resources/FoldingTabBar.h; sourceTree = "<group>"; };
+		00E43DD3495AFF7AC038E8D1BAF8D5B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CATransaction+TransactionWithAnimationsAndCompletion.m"; path = "FoldingTabBar/Category/CATransaction/CATransaction+TransactionWithAnimationsAndCompletion/CATransaction+TransactionWithAnimationsAndCompletion.m"; sourceTree = "<group>"; };
+		04D39F581308B63F7DEC8FE2663A5F73 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = FoldingTabBar/Resources/Info.plist; sourceTree = "<group>"; };
+		0F807AE7F246B7553D4B51460F9D483F /* YALFoldingTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALFoldingTabBar.h; path = FoldingTabBar/View/FoldingTabBar/YALFoldingTabBar.h; sourceTree = "<group>"; };
 		104AAA977ED846F0E506C034E3DDE701 /* Pods-RadioAparat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioAparat.debug.xcconfig"; sourceTree = "<group>"; };
-		1BAEC22BD84599BE2AE7EB69DF9BA917 /* libFoldingTabBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFoldingTabBar.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FCEECF666D12997D845ADE7D2D46BB0 /* FoldingTabBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FoldingTabBar-prefix.pch"; sourceTree = "<group>"; };
-		1FF257F00E306FDA4EBD526FE58BCD07 /* YALCustomHeightTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALCustomHeightTabBar.m; path = FoldingTabBar/View/CustomHeightTabBar/YALCustomHeightTabBar.m; sourceTree = "<group>"; };
-		323C0A6CB1ADFB24DB3026307E0B7EC2 /* CATransaction+TransactionWithAnimationsAndCompletion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CATransaction+TransactionWithAnimationsAndCompletion.m"; path = "FoldingTabBar/Category/CATransaction/CATransaction+TransactionWithAnimationsAndCompletion/CATransaction+TransactionWithAnimationsAndCompletion.m"; sourceTree = "<group>"; };
+		113F1AA1CD647B543D5ED8EB80C89100 /* libFoldingTabBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFoldingTabBar.a; path = libFoldingTabBar.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		17E00176EB629867FD94C4E25AE8ACA8 /* YALCustomHeightTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALCustomHeightTabBar.h; path = FoldingTabBar/View/CustomHeightTabBar/YALCustomHeightTabBar.h; sourceTree = "<group>"; };
+		1ED0904B3F90581552D584CCFF1DE3BA /* libPods-RadioAparat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-RadioAparat.a"; path = "libPods-RadioAparat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		246583C033CA532ECDBA02A910E89CDB /* libLastFm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLastFm.a; path = libLastFm.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		292D4745104105C689D9F41C0CC2A601 /* DDXMLNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLNode.h; path = KissXML/DDXMLNode.h; sourceTree = "<group>"; };
+		2E4E52FF6E845FA7AD6EF8705314DBD1 /* CATransaction+TransactionWithAnimationsAndCompletion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CATransaction+TransactionWithAnimationsAndCompletion.h"; path = "FoldingTabBar/Category/CATransaction/CATransaction+TransactionWithAnimationsAndCompletion/CATransaction+TransactionWithAnimationsAndCompletion.h"; sourceTree = "<group>"; };
+		2E4FF74D35D0A471B6275456F4454208 /* LastFm.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LastFm.xcconfig; sourceTree = "<group>"; };
 		33083C616C9CA8AF16FA7C690BC673C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		336B565A62C880C23637E27D44BDB86D /* DDXMLNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLNode.m; path = KissXML/DDXMLNode.m; sourceTree = "<group>"; };
 		3917A50EB224EEDBC66971700D698782 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		3E263E2EA2989B8C2A1179A51D786691 /* YALTabBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALTabBarItem.m; path = FoldingTabBar/Model/TabBarItem/YALTabBarItem.m; sourceTree = "<group>"; };
-		3E5575BC24C3D8E9D1E6971D29E7D298 /* CAAnimation+YALTabBarViewAnimations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CAAnimation+YALTabBarViewAnimations.h"; path = "FoldingTabBar/Category/CAAnimation/CAAnimation+YALTabBarViewAnimations/CAAnimation+YALTabBarViewAnimations.h"; sourceTree = "<group>"; };
-		4E83B6EF561B0E992F4463FA252DF6B7 /* YALAnimatingTabBarConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALAnimatingTabBarConstants.m; path = FoldingTabBar/Constants/YALAnimatingTabBarConstants.m; sourceTree = "<group>"; };
+		42F2C8CF5EB66849386D403CE0CEAE6A /* KissXML-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KissXML-dummy.m"; sourceTree = "<group>"; };
+		4BB1C96362906E6A8B2D1062141FCEB2 /* DDXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXML.h; path = KissXML/DDXML.h; sourceTree = "<group>"; };
+		4CF596DCD01064BD6678202853DB3AC1 /* YALAnimatingTabBarConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALAnimatingTabBarConstants.h; path = FoldingTabBar/Constants/YALAnimatingTabBarConstants.h; sourceTree = "<group>"; };
+		4FDCB74EF2D98B699119439DEF8661C6 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLElementAdditions.m; path = KissXML/Additions/DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		515979BD7171897221769E897E306961 /* NSString+DDXML.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+DDXML.h"; path = "KissXML/Categories/NSString+DDXML.h"; sourceTree = "<group>"; };
+		5279F11B36EAE5D7CB5FC67B4D6A4C27 /* LastFm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LastFm.h; path = LastFm/LastFm.h; sourceTree = "<group>"; };
 		53F29B469E93EF5DD80B78AB30BE76FF /* Pods-RadioAparat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RadioAparat.release.xcconfig"; sourceTree = "<group>"; };
+		5B2A03BDAC55F4D864EDC8878C3AE25B /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLElementAdditions.h; path = KissXML/Additions/DDXMLElementAdditions.h; sourceTree = "<group>"; };
 		5B777579BD39DC4263A8A77CF3546E88 /* Pods-RadioAparat-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioAparat-resources.sh"; sourceTree = "<group>"; };
-		6207FA76695155454712BF89ACD0A9B9 /* FoldingTabBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FoldingTabBar.xcconfig; sourceTree = "<group>"; };
-		678517CA2C516CC5A33640EC1855AD11 /* libPods-RadioAparat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RadioAparat.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DCA5E0EEB3B271334A81DA3F1BF3256 /* YALSpringAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALSpringAnimation.h; path = FoldingTabBar/Animation/YALSpringAnimation/YALSpringAnimation.h; sourceTree = "<group>"; };
+		65C37FA83928FDABF06992B34B9BA6CB /* YALCustomHeightTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALCustomHeightTabBar.m; path = FoldingTabBar/View/CustomHeightTabBar/YALCustomHeightTabBar.m; sourceTree = "<group>"; };
 		721B5FB6C1C3339D6D073160E8E2664F /* Pods-RadioAparat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RadioAparat-frameworks.sh"; sourceTree = "<group>"; };
-		74290D4796802DC127CF42B4A57AA836 /* YALFoldingTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALFoldingTabBarController.m; path = FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.m; sourceTree = "<group>"; };
-		75CF81412F72D75AE45F63148C764B12 /* YALFoldingTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALFoldingTabBar.h; path = FoldingTabBar/View/FoldingTabBar/YALFoldingTabBar.h; sourceTree = "<group>"; };
-		7C7530FF817E78F84FE7BE19F7DECEF8 /* YALFoldingTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALFoldingTabBar.m; path = FoldingTabBar/View/FoldingTabBar/YALFoldingTabBar.m; sourceTree = "<group>"; };
-		81DFC167781281EFF494C4622F1116CC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = FoldingTabBar/Resources/Info.plist; sourceTree = "<group>"; };
-		937432392F2705A850C7DEFF92ABF5F3 /* FoldingTabBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoldingTabBar-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		724DE318F8A83D5E7D1571BBDCEE25B1 /* YALSpringAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALSpringAnimation.m; path = FoldingTabBar/Animation/YALSpringAnimation/YALSpringAnimation.m; sourceTree = "<group>"; };
+		7A4019AF084D216C53514FE8C90AC1D2 /* DDXMLPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLPrivate.h; path = KissXML/Private/DDXMLPrivate.h; sourceTree = "<group>"; };
+		7AC19176A0790C848E3C819E73438B8F /* FoldingTabBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FoldingTabBar-prefix.pch"; sourceTree = "<group>"; };
+		7CDEC515C6E691FD3B40373D13E76F68 /* YALTabBarItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALTabBarItem.m; path = FoldingTabBar/Model/TabBarItem/YALTabBarItem.m; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93C6A1352651C6153DC6CA4248A1F54D /* KissXML.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KissXML.xcconfig; sourceTree = "<group>"; };
+		959DB691733E4F8AACA527CC26EE813F /* YALFoldingTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALFoldingTabBarController.h; path = FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.h; sourceTree = "<group>"; };
+		963A2EE135183524AB1B655B4E869336 /* DDXMLDocument.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLDocument.h; path = KissXML/DDXMLDocument.h; sourceTree = "<group>"; };
+		98BB127E2DFFA6B61D81393D637AEF68 /* CAAnimation+YALTabBarViewAnimations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAAnimation+YALTabBarViewAnimations.m"; path = "FoldingTabBar/Category/CAAnimation/CAAnimation+YALTabBarViewAnimations/CAAnimation+YALTabBarViewAnimations.m"; sourceTree = "<group>"; };
 		9CFC99967F48D993096707CA92190DDD /* Pods-RadioAparat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RadioAparat-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A47F570040543441FB9D75E32F8F4B96 /* Pods-RadioAparat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RadioAparat-acknowledgements.plist"; sourceTree = "<group>"; };
-		A6F1343195249757DBF6AED754CCD8CC /* YALCustomHeightTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALCustomHeightTabBar.h; path = FoldingTabBar/View/CustomHeightTabBar/YALCustomHeightTabBar.h; sourceTree = "<group>"; };
-		BF39E58E9D23D73BF6443DA7E8BEC91F /* YALAnimatingTabBarConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALAnimatingTabBarConstants.h; path = FoldingTabBar/Constants/YALAnimatingTabBarConstants.h; sourceTree = "<group>"; };
-		C50EAEA211DD88CC5F383DEECB33A6E2 /* CATransaction+TransactionWithAnimationsAndCompletion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CATransaction+TransactionWithAnimationsAndCompletion.h"; path = "FoldingTabBar/Category/CATransaction/CATransaction+TransactionWithAnimationsAndCompletion/CATransaction+TransactionWithAnimationsAndCompletion.h"; sourceTree = "<group>"; };
-		DF6FC7D75DF424D09BE8B9CD085C3228 /* CAAnimation+YALTabBarViewAnimations.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CAAnimation+YALTabBarViewAnimations.m"; path = "FoldingTabBar/Category/CAAnimation/CAAnimation+YALTabBarViewAnimations/CAAnimation+YALTabBarViewAnimations.m"; sourceTree = "<group>"; };
-		E362EB3AAD6175215C23F3F0C3487945 /* YALSpringAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALSpringAnimation.h; path = FoldingTabBar/Animation/YALSpringAnimation/YALSpringAnimation.h; sourceTree = "<group>"; };
-		EA1D2430AB087E0CAB42B1307D8D1B93 /* YALFoldingTabBarController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALFoldingTabBarController.h; path = FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.h; sourceTree = "<group>"; };
+		A4E4C472FEE7605F92C561AEF78D947A /* LastFm-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LastFm-prefix.pch"; sourceTree = "<group>"; };
+		A903E182C196A0DE26FD30FFB8147090 /* libKissXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libKissXML.a; path = libKissXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA17247A223FE28A05E61D56620F2C42 /* YALTabBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALTabBarItem.h; path = FoldingTabBar/Model/TabBarItem/YALTabBarItem.h; sourceTree = "<group>"; };
+		B2D3DD16EE98BE50AEF105B8AB0960B4 /* DDXMLElement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDXMLElement.h; path = KissXML/DDXMLElement.h; sourceTree = "<group>"; };
+		C132B93AD2720DBA46F390CDD41C3494 /* LastFm-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LastFm-dummy.m"; sourceTree = "<group>"; };
+		C4CCE00D3B1E5627068F45CF72F646C3 /* KissXML-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KissXML-prefix.pch"; sourceTree = "<group>"; };
+		CD72283647C80916164A5B6F23F22073 /* DDXMLDocument.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLDocument.m; path = KissXML/DDXMLDocument.m; sourceTree = "<group>"; };
+		D5EF7CE05BDF0CEDF71866F5AC141948 /* FoldingTabBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FoldingTabBar-dummy.m"; sourceTree = "<group>"; };
+		DF1425D7E4F185E7DADD749AA2B261B0 /* YALFoldingTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALFoldingTabBarController.m; path = FoldingTabBar/Controller/FoldingTabBarController/YALFoldingTabBarController.m; sourceTree = "<group>"; };
+		E7D98455A104CF5452EBF32AF3B1CA22 /* CAAnimation+YALTabBarViewAnimations.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CAAnimation+YALTabBarViewAnimations.h"; path = "FoldingTabBar/Category/CAAnimation/CAAnimation+YALTabBarViewAnimations/CAAnimation+YALTabBarViewAnimations.h"; sourceTree = "<group>"; };
+		E8C70B3A852C7A85FF50AF11241407DA /* LastFm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LastFm.m; path = LastFm/LastFm.m; sourceTree = "<group>"; };
 		ECD534E578DE4CE6061844ED9B820695 /* Pods-RadioAparat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RadioAparat-dummy.m"; sourceTree = "<group>"; };
-		EFBB309B8961EC89A16713D5637435B8 /* YALTabBarItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YALTabBarItem.h; path = FoldingTabBar/Model/TabBarItem/YALTabBarItem.h; sourceTree = "<group>"; };
+		EE3E01D2902F7533DFB0BBB602502159 /* YALAnimatingTabBarConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALAnimatingTabBarConstants.m; path = FoldingTabBar/Constants/YALAnimatingTabBarConstants.m; sourceTree = "<group>"; };
+		F11EC3FD67DFA5B7CCB33DCB681EF928 /* FoldingTabBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FoldingTabBar.h; path = FoldingTabBar/Resources/FoldingTabBar.h; sourceTree = "<group>"; };
+		F3D46B0A395A05FC4F46C5389C4A264B /* NSString+DDXML.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+DDXML.m"; path = "KissXML/Categories/NSString+DDXML.m"; sourceTree = "<group>"; };
+		F8CFA390C7DF7108A1BAD6ED3714F4D7 /* FoldingTabBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FoldingTabBar.xcconfig; sourceTree = "<group>"; };
 		FB7751D4D791D1183FB66D3CCA52CD8E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		FBEF4EAC555985A38B3E2A5E16A19DF5 /* YALSpringAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALSpringAnimation.m; path = FoldingTabBar/Animation/YALSpringAnimation/YALSpringAnimation.m; sourceTree = "<group>"; };
+		FC889E0DE5F2C5E35A1FAFBD7BB3F05D /* YALFoldingTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YALFoldingTabBar.m; path = FoldingTabBar/View/FoldingTabBar/YALFoldingTabBar.m; sourceTree = "<group>"; };
+		FFC33C37CB58B0B749771D5A04775899 /* DDXMLElement.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDXMLElement.m; path = KissXML/DDXMLElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1F7ED01351404C2ADC642DFD39DB5C51 /* Frameworks */ = {
+		99BA26380A4EB2FD20051D535DDE7E63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28647F67665615EB37C9202F1331E215 /* Foundation.framework in Frameworks */,
+				879C0641FCD8E685B9B2C9300E45DF32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C78E087D39A10D8CC1CA96AE6161DCC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D371E1FE3EAAD792216800B6FEF36DB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC96A48D35F0AB8E0C5708B9A07010AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C48DC1D39FD9444D6605233D57340F28 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +179,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E18C30229FFA4D7CB7FBE576055C8EF /* FoldingTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				E7D98455A104CF5452EBF32AF3B1CA22 /* CAAnimation+YALTabBarViewAnimations.h */,
+				98BB127E2DFFA6B61D81393D637AEF68 /* CAAnimation+YALTabBarViewAnimations.m */,
+				2E4E52FF6E845FA7AD6EF8705314DBD1 /* CATransaction+TransactionWithAnimationsAndCompletion.h */,
+				00E43DD3495AFF7AC038E8D1BAF8D5B0 /* CATransaction+TransactionWithAnimationsAndCompletion.m */,
+				F11EC3FD67DFA5B7CCB33DCB681EF928 /* FoldingTabBar.h */,
+				04D39F581308B63F7DEC8FE2663A5F73 /* Info.plist */,
+				4CF596DCD01064BD6678202853DB3AC1 /* YALAnimatingTabBarConstants.h */,
+				EE3E01D2902F7533DFB0BBB602502159 /* YALAnimatingTabBarConstants.m */,
+				17E00176EB629867FD94C4E25AE8ACA8 /* YALCustomHeightTabBar.h */,
+				65C37FA83928FDABF06992B34B9BA6CB /* YALCustomHeightTabBar.m */,
+				0F807AE7F246B7553D4B51460F9D483F /* YALFoldingTabBar.h */,
+				FC889E0DE5F2C5E35A1FAFBD7BB3F05D /* YALFoldingTabBar.m */,
+				959DB691733E4F8AACA527CC26EE813F /* YALFoldingTabBarController.h */,
+				DF1425D7E4F185E7DADD749AA2B261B0 /* YALFoldingTabBarController.m */,
+				5DCA5E0EEB3B271334A81DA3F1BF3256 /* YALSpringAnimation.h */,
+				724DE318F8A83D5E7D1571BBDCEE25B1 /* YALSpringAnimation.m */,
+				AA17247A223FE28A05E61D56620F2C42 /* YALTabBarItem.h */,
+				7CDEC515C6E691FD3B40373D13E76F68 /* YALTabBarItem.m */,
+				5A6353EDA7B6808E6D18C934731BC02A /* Support Files */,
+			);
+			name = FoldingTabBar;
+			path = FoldingTabBar;
+			sourceTree = "<group>";
+		};
 		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,23 +222,58 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		55C4810B772F144CF30789FB95D9ADB9 /* Support Files */ = {
+		1D3C62EABEB8CFCCD5667CB620C1C47A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6207FA76695155454712BF89ACD0A9B9 /* FoldingTabBar.xcconfig */,
-				937432392F2705A850C7DEFF92ABF5F3 /* FoldingTabBar-dummy.m */,
-				1FCEECF666D12997D845ADE7D2D46BB0 /* FoldingTabBar-prefix.pch */,
+				2E4FF74D35D0A471B6275456F4454208 /* LastFm.xcconfig */,
+				C132B93AD2720DBA46F390CDD41C3494 /* LastFm-dummy.m */,
+				A4E4C472FEE7605F92C561AEF78D947A /* LastFm-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LastFm";
+			sourceTree = "<group>";
+		};
+		3A8A1AD0D15C74A9D9C5A3F49A2FF48F /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				CB705C39522039912BF8BA2389789C58 /* Core */,
+				79DEC144641FE6E376E3D2489EF0CAE8 /* Support Files */,
+			);
+			name = KissXML;
+			path = KissXML;
+			sourceTree = "<group>";
+		};
+		46BB85651ED217F1F623BC2694321B7E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				113F1AA1CD647B543D5ED8EB80C89100 /* libFoldingTabBar.a */,
+				A903E182C196A0DE26FD30FFB8147090 /* libKissXML.a */,
+				246583C033CA532ECDBA02A910E89CDB /* libLastFm.a */,
+				1ED0904B3F90581552D584CCFF1DE3BA /* libPods-RadioAparat.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A6353EDA7B6808E6D18C934731BC02A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8CFA390C7DF7108A1BAD6ED3714F4D7 /* FoldingTabBar.xcconfig */,
+				D5EF7CE05BDF0CEDF71866F5AC141948 /* FoldingTabBar-dummy.m */,
+				7AC19176A0790C848E3C819E73438B8F /* FoldingTabBar-prefix.pch */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/FoldingTabBar";
 			sourceTree = "<group>";
 		};
-		75D7253B7BBA673249F1BD9F327115B2 /* Pods */ = {
+		79DEC144641FE6E376E3D2489EF0CAE8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				DFB8398EC7478105D3DEF442B4F6FDC1 /* FoldingTabBar */,
+				93C6A1352651C6153DC6CA4248A1F54D /* KissXML.xcconfig */,
+				42F2C8CF5EB66849386D403CE0CEAE6A /* KissXML-dummy.m */,
+				C4CCE00D3B1E5627068F45CF72F646C3 /* KissXML-prefix.pch */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/KissXML";
 			sourceTree = "<group>";
 		};
 		7C8336C3E1CC2741845A5C0934574172 /* Pods-RadioAparat */ = {
@@ -157,10 +296,20 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				75D7253B7BBA673249F1BD9F327115B2 /* Pods */,
-				EEF1559923E12559225052EF1F0138BB /* Products */,
+				92924F9FA438BA2C09913DD7B00FD699 /* Pods */,
+				46BB85651ED217F1F623BC2694321B7E /* Products */,
 				14E154111B5DBE3EB6FBD965BCB82163 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		92924F9FA438BA2C09913DD7B00FD699 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E18C30229FFA4D7CB7FBE576055C8EF /* FoldingTabBar */,
+				3A8A1AD0D15C74A9D9C5A3F49A2FF48F /* KissXML */,
+				93CF12FF4A59D3F150C2D3C8FC0940BD /* LastFm */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		93A319F2C1969B7AA0B17444A3F8BA22 /* iOS */ = {
@@ -173,39 +322,34 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		DFB8398EC7478105D3DEF442B4F6FDC1 /* FoldingTabBar */ = {
+		93CF12FF4A59D3F150C2D3C8FC0940BD /* LastFm */ = {
 			isa = PBXGroup;
 			children = (
-				3E5575BC24C3D8E9D1E6971D29E7D298 /* CAAnimation+YALTabBarViewAnimations.h */,
-				DF6FC7D75DF424D09BE8B9CD085C3228 /* CAAnimation+YALTabBarViewAnimations.m */,
-				C50EAEA211DD88CC5F383DEECB33A6E2 /* CATransaction+TransactionWithAnimationsAndCompletion.h */,
-				323C0A6CB1ADFB24DB3026307E0B7EC2 /* CATransaction+TransactionWithAnimationsAndCompletion.m */,
-				08E3E403E4D8E0728F794C96B32C2B19 /* FoldingTabBar.h */,
-				81DFC167781281EFF494C4622F1116CC /* Info.plist */,
-				BF39E58E9D23D73BF6443DA7E8BEC91F /* YALAnimatingTabBarConstants.h */,
-				4E83B6EF561B0E992F4463FA252DF6B7 /* YALAnimatingTabBarConstants.m */,
-				A6F1343195249757DBF6AED754CCD8CC /* YALCustomHeightTabBar.h */,
-				1FF257F00E306FDA4EBD526FE58BCD07 /* YALCustomHeightTabBar.m */,
-				75CF81412F72D75AE45F63148C764B12 /* YALFoldingTabBar.h */,
-				7C7530FF817E78F84FE7BE19F7DECEF8 /* YALFoldingTabBar.m */,
-				EA1D2430AB087E0CAB42B1307D8D1B93 /* YALFoldingTabBarController.h */,
-				74290D4796802DC127CF42B4A57AA836 /* YALFoldingTabBarController.m */,
-				E362EB3AAD6175215C23F3F0C3487945 /* YALSpringAnimation.h */,
-				FBEF4EAC555985A38B3E2A5E16A19DF5 /* YALSpringAnimation.m */,
-				EFBB309B8961EC89A16713D5637435B8 /* YALTabBarItem.h */,
-				3E263E2EA2989B8C2A1179A51D786691 /* YALTabBarItem.m */,
-				55C4810B772F144CF30789FB95D9ADB9 /* Support Files */,
+				5279F11B36EAE5D7CB5FC67B4D6A4C27 /* LastFm.h */,
+				E8C70B3A852C7A85FF50AF11241407DA /* LastFm.m */,
+				1D3C62EABEB8CFCCD5667CB620C1C47A /* Support Files */,
 			);
-			path = FoldingTabBar;
+			name = LastFm;
+			path = LastFm;
 			sourceTree = "<group>";
 		};
-		EEF1559923E12559225052EF1F0138BB /* Products */ = {
+		CB705C39522039912BF8BA2389789C58 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				1BAEC22BD84599BE2AE7EB69DF9BA917 /* libFoldingTabBar.a */,
-				678517CA2C516CC5A33640EC1855AD11 /* libPods-RadioAparat.a */,
+				4BB1C96362906E6A8B2D1062141FCEB2 /* DDXML.h */,
+				963A2EE135183524AB1B655B4E869336 /* DDXMLDocument.h */,
+				CD72283647C80916164A5B6F23F22073 /* DDXMLDocument.m */,
+				B2D3DD16EE98BE50AEF105B8AB0960B4 /* DDXMLElement.h */,
+				FFC33C37CB58B0B749771D5A04775899 /* DDXMLElement.m */,
+				5B2A03BDAC55F4D864EDC8878C3AE25B /* DDXMLElementAdditions.h */,
+				4FDCB74EF2D98B699119439DEF8661C6 /* DDXMLElementAdditions.m */,
+				292D4745104105C689D9F41C0CC2A601 /* DDXMLNode.h */,
+				336B565A62C880C23637E27D44BDB86D /* DDXMLNode.m */,
+				7A4019AF084D216C53514FE8C90AC1D2 /* DDXMLPrivate.h */,
+				515979BD7171897221769E897E306961 /* NSString+DDXML.h */,
+				F3D46B0A395A05FC4F46C5389C4A264B /* NSString+DDXML.m */,
 			);
-			name = Products;
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,9 +371,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C236EDF243D2BFEBE596242CBB4EB0D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F2D4966B629B19CDC19D30EEF64F414 /* LastFm.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADBED3BBDFEA06D4DCD851A2D2C3A56E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				218D50C609EA9B60CA0B33DA062BB34E /* DDXML.h in Headers */,
+				50067B03D41431E6CDFE0E2AB3876CC4 /* DDXMLDocument.h in Headers */,
+				4FE5AF43526F3EDC595893FA6D564EEE /* DDXMLElement.h in Headers */,
+				4B1237EB688AA8A21ED8731772D7E9B2 /* DDXMLElementAdditions.h in Headers */,
+				1CB2F9ACA1D40F1709590B0281F737B1 /* DDXMLNode.h in Headers */,
+				111DCA03B86CF5F4EAA2EE91F0F1D7FC /* DDXMLPrivate.h in Headers */,
+				DEBDCE400FD4C8A37F114F1C0C9B9315 /* NSString+DDXML.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		0F5E68DF82AD5CBBCCD1D9B9C63AB32B /* LastFm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79DCAEEF6B39AAE78375C5EF2A8DCDA8 /* Build configuration list for PBXNativeTarget "LastFm" */;
+			buildPhases = (
+				D69E42A8FD179F76F49F64F151962EAC /* Sources */,
+				99BA26380A4EB2FD20051D535DDE7E63 /* Frameworks */,
+				8C236EDF243D2BFEBE596242CBB4EB0D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D169A00749D47F54DEFBFA2DA85D2ACD /* PBXTargetDependency */,
+			);
+			name = LastFm;
+			productName = LastFm;
+			productReference = 246583C033CA532ECDBA02A910E89CDB /* libLastFm.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		3B73143539FB8DFDC1A8FBDCA55B0A8E /* FoldingTabBar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F78A52985EBB068D76539AA2A2CCFDE8 /* Build configuration list for PBXNativeTarget "FoldingTabBar" */;
@@ -244,24 +428,43 @@
 			);
 			name = FoldingTabBar;
 			productName = FoldingTabBar;
-			productReference = 1BAEC22BD84599BE2AE7EB69DF9BA917 /* libFoldingTabBar.a */;
+			productReference = 113F1AA1CD647B543D5ED8EB80C89100 /* libFoldingTabBar.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		772AEF4903EA6D3E06D689F01A79E6F6 /* Pods-RadioAparat */ = {
+		D14991DBD8D9B893E4CFB910306ACB13 /* KissXML */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4F4FD5607C3EC247471D012210F3D314 /* Build configuration list for PBXNativeTarget "Pods-RadioAparat" */;
+			buildConfigurationList = 89AD5E5D11C7A49D3D75D8F734DD3137 /* Build configuration list for PBXNativeTarget "KissXML" */;
 			buildPhases = (
-				E86AD6FFC6C9BCC784484018F06B6A0C /* Sources */,
-				1F7ED01351404C2ADC642DFD39DB5C51 /* Frameworks */,
+				A80E5A99949EC2D4F3FA504D6CD2C1F0 /* Sources */,
+				C78E087D39A10D8CC1CA96AE6161DCC2 /* Frameworks */,
+				ADBED3BBDFEA06D4DCD851A2D2C3A56E /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8E22048F8CA483FAC183004A9CF231AD /* PBXTargetDependency */,
+			);
+			name = KissXML;
+			productName = KissXML;
+			productReference = A903E182C196A0DE26FD30FFB8147090 /* libKissXML.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E9FE479B192718C4063F9D97D44BAF00 /* Pods-RadioAparat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F312C3A0E6C8F947219135C33CEC997A /* Build configuration list for PBXNativeTarget "Pods-RadioAparat" */;
+			buildPhases = (
+				D65AB129318F4DEF9F46C59A30762ADD /* Sources */,
+				CC96A48D35F0AB8E0C5708B9A07010AD /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D12CB48FCEFFBDAA89B37AAD02FEC6A5 /* PBXTargetDependency */,
+				FA93D70656209D16E623F67C539CA708 /* PBXTargetDependency */,
+				5626F22CDCCECCFB3C91AFF38E6ADCC2 /* PBXTargetDependency */,
 			);
 			name = "Pods-RadioAparat";
 			productName = "Pods-RadioAparat";
-			productReference = 678517CA2C516CC5A33640EC1855AD11 /* libPods-RadioAparat.a */;
+			productReference = 1ED0904B3F90581552D584CCFF1DE3BA /* libPods-RadioAparat.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -271,7 +474,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -281,12 +484,14 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = EEF1559923E12559225052EF1F0138BB /* Products */;
+			productRefGroup = 46BB85651ED217F1F623BC2694321B7E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				3B73143539FB8DFDC1A8FBDCA55B0A8E /* FoldingTabBar */,
-				772AEF4903EA6D3E06D689F01A79E6F6 /* Pods-RadioAparat */,
+				D14991DBD8D9B893E4CFB910306ACB13 /* KissXML */,
+				0F5E68DF82AD5CBBCCD1D9B9C63AB32B /* LastFm */,
+				E9FE479B192718C4063F9D97D44BAF00 /* Pods-RadioAparat */,
 			);
 		};
 /* End PBXProject section */
@@ -309,26 +514,87 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E86AD6FFC6C9BCC784484018F06B6A0C /* Sources */ = {
+		A80E5A99949EC2D4F3FA504D6CD2C1F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB8BA42651E6A73E985B544FC5EA0548 /* Pods-RadioAparat-dummy.m in Sources */,
+				65234587759C92B9F173EE7E1033FA1E /* DDXMLDocument.m in Sources */,
+				E437B5BA7B4DB7A2C212FC63CA89CB28 /* DDXMLElement.m in Sources */,
+				6B187BA38E46A5FC4010B4C1A7A602A1 /* DDXMLElementAdditions.m in Sources */,
+				E807A15EC3B3E6EBE9D7E3E9DC8F48B4 /* DDXMLNode.m in Sources */,
+				53E272ED4B49CFCD4747239118737E33 /* KissXML-dummy.m in Sources */,
+				FEC2E1B29D1955CCD6979334FA8159C6 /* NSString+DDXML.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D65AB129318F4DEF9F46C59A30762ADD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68ADF1672D1CB3B3B7E51E36062B24B4 /* Pods-RadioAparat-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D69E42A8FD179F76F49F64F151962EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7551CE17744BD708A6BC45430D53EDF /* LastFm-dummy.m in Sources */,
+				5E840CA1A7C4643FA46B2CC968FC02C8 /* LastFm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8E22048F8CA483FAC183004A9CF231AD /* PBXTargetDependency */ = {
+		5626F22CDCCECCFB3C91AFF38E6ADCC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LastFm;
+			target = 0F5E68DF82AD5CBBCCD1D9B9C63AB32B /* LastFm */;
+			targetProxy = DA914F52F201F10B43D2F986BAF7452A /* PBXContainerItemProxy */;
+		};
+		D12CB48FCEFFBDAA89B37AAD02FEC6A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FoldingTabBar;
 			target = 3B73143539FB8DFDC1A8FBDCA55B0A8E /* FoldingTabBar */;
-			targetProxy = BE274E384016962C3F55D28DA312C1F0 /* PBXContainerItemProxy */;
+			targetProxy = 0839AE982BF5D0A42D6BA2BFA2CD07AF /* PBXContainerItemProxy */;
+		};
+		D169A00749D47F54DEFBFA2DA85D2ACD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KissXML;
+			target = D14991DBD8D9B893E4CFB910306ACB13 /* KissXML */;
+			targetProxy = D16FD6C50C3769FAC8726984EEE70764 /* PBXContainerItemProxy */;
+		};
+		FA93D70656209D16E623F67C539CA708 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KissXML;
+			target = D14991DBD8D9B893E4CFB910306ACB13 /* KissXML */;
+			targetProxy = 6EAF973684364DE408963FD593099D39 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1AB086114A3CC020FC87A6C000E0F29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E4FF74D35D0A471B6275456F4454208 /* LastFm.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/LastFm/LastFm-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		1D23278938ADF334174C5BF2A4B6B1B8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -384,7 +650,71 @@
 			};
 			name = Release;
 		};
-		2AF13CF0F06EACE22CDB9D487D5E65A7 /* Release */ = {
+		37BC2712F98781BCA20893652FCF0697 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8CFA390C7DF7108A1BAD6ED3714F4D7 /* FoldingTabBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FoldingTabBar/FoldingTabBar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46DD08CF9AED82218214E34F4358E5E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93C6A1352651C6153DC6CA4248A1F54D /* KissXML.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/KissXML/KissXML-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B543670F3CCE4629FB87F18BE02E6A8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8CFA390C7DF7108A1BAD6ED3714F4D7 /* FoldingTabBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/FoldingTabBar/FoldingTabBar-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CDB709FA3E96CC7031BD95BC587D25E /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 53F29B469E93EF5DD80B78AB30BE76FF /* Pods-RadioAparat.release.xcconfig */;
 			buildSettings = {
@@ -405,48 +735,25 @@
 			};
 			name = Release;
 		};
-		37BC2712F98781BCA20893652FCF0697 /* Debug */ = {
+		938EF9A43CDA0AB570320F4C19304119 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6207FA76695155454712BF89ACD0A9B9 /* FoldingTabBar.xcconfig */;
+			baseConfigurationReference = 104AAA977ED846F0E506C034E3DDE701 /* Pods-RadioAparat.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FoldingTabBar/FoldingTabBar-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MACH_O_TYPE = staticlib;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		5B543670F3CCE4629FB87F18BE02E6A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6207FA76695155454712BF89ACD0A9B9 /* FoldingTabBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/FoldingTabBar/FoldingTabBar-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 		995C3A53DEAA96B47E756185345E180D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -508,25 +815,49 @@
 			};
 			name = Debug;
 		};
-		A0D3646B9BF345D7E759E26523CB6AC3 /* Debug */ = {
+		A49A39233A9CAE26A19CFFB22A78B641 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 104AAA977ED846F0E506C034E3DDE701 /* Pods-RadioAparat.debug.xcconfig */;
+			baseConfigurationReference = 93C6A1352651C6153DC6CA4248A1F54D /* KissXML.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
-				MACH_O_TYPE = staticlib;
+				GCC_PREFIX_HEADER = "Target Support Files/KissXML/KissXML-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
+		};
+		C01D659854B4D9D6944BC6B281FA7D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E4FF74D35D0A471B6275456F4454208 /* LastFm.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/LastFm/LastFm-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -540,11 +871,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F4FD5607C3EC247471D012210F3D314 /* Build configuration list for PBXNativeTarget "Pods-RadioAparat" */ = {
+		79DCAEEF6B39AAE78375C5EF2A8DCDA8 /* Build configuration list for PBXNativeTarget "LastFm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0D3646B9BF345D7E759E26523CB6AC3 /* Debug */,
-				2AF13CF0F06EACE22CDB9D487D5E65A7 /* Release */,
+				1AB086114A3CC020FC87A6C000E0F29D /* Debug */,
+				C01D659854B4D9D6944BC6B281FA7D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89AD5E5D11C7A49D3D75D8F734DD3137 /* Build configuration list for PBXNativeTarget "KissXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46DD08CF9AED82218214E34F4358E5E9 /* Debug */,
+				A49A39233A9CAE26A19CFFB22A78B641 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F312C3A0E6C8F947219135C33CEC997A /* Build configuration list for PBXNativeTarget "Pods-RadioAparat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				938EF9A43CDA0AB570320F4C19304119 /* Debug */,
+				8CDB709FA3E96CC7031BD95BC587D25E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
