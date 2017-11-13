@@ -8,4 +8,5 @@ target 'RadioAparat' do
   # Pods for RadioAparat
   pod 'FoldingTabBar', '~> 1.1'
   pod 'LastFm'
+  pod 'AFNetworking'
 end

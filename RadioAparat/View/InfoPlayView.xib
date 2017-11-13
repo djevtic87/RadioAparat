@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="362" height="66"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioAparat" translatesAutoresizingMaskIntoConstraints="NO" id="i2A-AI-Aqb">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i2A-AI-Aqb">
                     <rect key="frame" x="291" y="0.0" width="71" height="66"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="i2A-AI-Aqb" secondAttribute="height" multiplier="71:66" id="fXm-6q-FBi"/>
@@ -45,12 +45,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="imageView" destination="i2A-AI-Aqb" id="f3M-uQ-txr"/>
                 <outlet property="titleLabel" destination="FCv-ZG-F7h" id="Spi-HQ-tlM"/>
             </connections>
             <point key="canvasLocation" x="-29" y="-35"/>
         </view>
     </objects>
-    <resources>
-        <image name="RadioAparat" width="76" height="76"/>
-    </resources>
 </document>

@@ -1,9 +1,9 @@
 CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2 "$(SDKROOT)/usr/include/libxml2" $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/FoldingTabBar" "${PODS_ROOT}/Headers/Public/KissXML" "${PODS_ROOT}/Headers/Public/LastFm"
-LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/FoldingTabBar" "$PODS_CONFIGURATION_BUILD_DIR/KissXML" "$PODS_CONFIGURATION_BUILD_DIR/LastFm"
-OTHER_CFLAGS = $(inherited) -DDDXML_LIBXML_MODULE_ENABLED=0 $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/FoldingTabBar" -isystem "${PODS_ROOT}/Headers/Public/KissXML" -isystem "${PODS_ROOT}/Headers/Public/LastFm"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"FoldingTabBar" -l"KissXML" -l"LastFm" -l"xml2" -framework "QuartzCore" -framework "UIKit"
+HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2 "$(SDKROOT)/usr/include/libxml2" $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/FoldingTabBar" "${PODS_ROOT}/Headers/Public/KissXML" "${PODS_ROOT}/Headers/Public/LastFm"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking" "$PODS_CONFIGURATION_BUILD_DIR/FoldingTabBar" "$PODS_CONFIGURATION_BUILD_DIR/KissXML" "$PODS_CONFIGURATION_BUILD_DIR/LastFm"
+OTHER_CFLAGS = $(inherited) -DDDXML_LIBXML_MODULE_ENABLED=0 $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/FoldingTabBar" -isystem "${PODS_ROOT}/Headers/Public/KissXML" -isystem "${PODS_ROOT}/Headers/Public/LastFm"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking" -l"FoldingTabBar" -l"KissXML" -l"LastFm" -l"xml2" -framework "CoreGraphics" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
 PODS_BUILD_DIR = $BUILD_DIR
 PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

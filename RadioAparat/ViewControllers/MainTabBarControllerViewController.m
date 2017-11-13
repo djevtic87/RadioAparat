@@ -6,9 +6,10 @@
 //  Copyright © 2017 Dejan Jevtic. All rights reserved.
 //
 
-#import "LastFm.h"
+#import <AFNetworking/AFNetworking.h>
 #import "MainTabBarControllerViewController.h"
 #import "InfoPlayView.h"
+
 
 @interface MainTabBarControllerViewController () {
     InfoPlayView *infoPlayView;
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Add info view.
     CGRect rect = self.view.frame;
     rect.size.height = self.tabBar.frame.size.height;
     rect.origin.y = self.view.frame.size.height - self.tabBar.frame.size.height - rect.size.height;
@@ -29,13 +32,10 @@
     
     [self.view addSubview:infoPlayView];
     
-    // Init AVPlayer
-    //self.player = [AVPlayer playerWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
-    
+    // Alloc radio player.
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
     [playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
     self.player = [AVPlayer playerWithPlayerItem:playerItem] ;
-    [self.player play];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,40 +46,11 @@
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
                          change:(NSDictionary*)change context:(void*)context {
     
+    // Get track info data.
     if ([keyPath isEqualToString:@"timedMetadata"])
     {
         AVPlayerItem* playerItem = object;
-        
-        for (AVMetadataItem* metadata in playerItem.timedMetadata)
-        {
-            NSLog(@"\nkey: %@\nkeySpace: %@\ncommonKey: %@\nvalue: %@", [metadata.key description], metadata.keySpace, metadata.commonKey, metadata.stringValue);
-        }
-        AVMetadataItem* metadata = [playerItem.timedMetadata lastObject];
-        infoPlayView.titleLabel.text = metadata.stringValue;
-        
-        //    Dodaj Jedan controller kao sub klasu YALFoldingTabBarController.
-        //    Za dobavljanje slika i informacija o pesmi koristi.
-        //    // Set the Last.fm session info
-        
-        [LastFm sharedInstance].apiKey = @"ce9a96e3f484167e5bd81c663610a568";
-        [LastFm sharedInstance].apiSecret = @"e967e63c5ced2da3be1e939ddd1a49b9";
-        //[LastFm sharedInstance].session = session;
-        //[LastFm sharedInstance].username = username;
-        
-        // Get artist info
-        [[LastFm sharedInstance] getInfoForArtist:@"Pink Floyd" successHandler:^(NSDictionary *result) {
-            NSLog(@"result: %@", result);
-        } failureHandler:^(NSError *error) {
-            NSLog(@"error: %@", error);
-        }];
-        
-        // Scrobble a track
-        [[LastFm sharedInstance] sendScrobbledTrack:@"Wish You Were Here" byArtist:@"Pink Floyd" onAlbum:@"Wish You Were Here" withDuration:534 atTimestamp:(int)[[NSDate date] timeIntervalSince1970] successHandler:^(NSDictionary *result) {
-            NSLog(@"result: %@", result);
-        } failureHandler:^(NSError *error) {
-            NSLog(@"error: %@", error);
-        }];
-
+        [infoPlayView updateViewWith:playerItem];
     }
 }
 

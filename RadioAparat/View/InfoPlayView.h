@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIImageView+AFNetworking.h"
 
 @interface InfoPlayView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+-(void) updateViewWith:(AVPlayerItem*) playerItem;
 
 @end
