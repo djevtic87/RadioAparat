@@ -33,7 +33,9 @@
     if (index != NSNotFound) {
         artist = [metadataStringValue substringToIndex:index];
         song = [metadataStringValue substringFromIndex:index + 1];
-        NSLog(@"Getting image for %@ - %@", artist, song);
+        artist = [artist stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+        song = [song stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+        NSLog(@"Getting image for: %@ - %@", artist, song);
     } else {
         NSLog(@"Error getting artist and track info.");
     }
