@@ -45,9 +45,12 @@
     // By default info view is hidden.
     [infoPlayView setHidden:true];
     
-    // Added guestures to hide and show music view info.
+    
     [infoPlayView.downButton addTarget:self action:@selector(hidePlayInfoView:) forControlEvents:UIControlEventTouchUpInside];
 
+    [infoPlayView.shareButton addTarget:self action:@selector(shareButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    // Added guestures to hide and show music view info.
     UISwipeGestureRecognizer *swipeGestureDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hidePlayInfoView:)];
     [swipeGestureDown setNumberOfTouchesRequired:1];
     [swipeGestureDown setDirection:UISwipeGestureRecognizerDirectionDown];
@@ -74,19 +77,38 @@
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
                          change:(NSDictionary*)change context:(void*)context {
-    
     // Get track info data.
     if ([keyPath isEqualToString:@"timedMetadata"])
     {
         AVPlayerItem* playerItem = object;
         [infoPlayView updateViewWith:playerItem];
+        [self showInfoView:true];
+    }
+}
+
+- (void)shareButtonPressed:(id)sender {
+    NSArray* sharedObjects=[NSArray arrayWithObjects:@"http://www.radioaparat.com/",  nil];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc]                                                                initWithActivityItems:sharedObjects applicationActivities:nil];
+    activityViewController.popoverPresentationController.sourceView = self.view;
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+-(void) showInfoView:(BOOL)show {
+    if (!infoPlayView.expanded && ![infoPlayView.titleLabel.text isEqualToString:@""]) {
+        [UIView transitionWithView:infoPlayView
+                          duration:VIEW_ANIMATION_TIME
+                           options:UIViewAnimationOptionTransitionCrossDissolve
+                        animations:^{
+                            [infoPlayView setHidden:!show];
+                        }
+                        completion:NULL];
+        
     }
 }
 
 #pragma mark - InfoPlayView tap handler
-
 - (void)hidePlayInfoView:(id)sender {
-    [UIView animateWithDuration:EXPAND_VIEW_ANIMATION_TIME
+    [UIView animateWithDuration:VIEW_ANIMATION_TIME
                      animations:^{
                          [infoPlayView.titleLableLarge setHidden:true];
                          CGRect rect = self.view.frame;
@@ -94,24 +116,27 @@
                          rect.origin.y = self.view.frame.size.height - self.tabBar.frame.size.height - rect.size.height;
                          infoPlayView.frame = rect;
                          infoPlayView.expanded = false;
-                         
                      }
                      completion:^(BOOL finished) {
                          // whatever you need to do when animations are complete
+                         if ((self.player.rate != 0) && (self.player.error == nil)) {
+                             [self showInfoView:true];
+                         } else {
+                             [self showInfoView:false];
+                         }
                      }];
 }
 
 - (void)showPlayInfoView:(id)sender {
     if (!infoPlayView.expanded) {
         // Expand view.
-        [UIView animateWithDuration:EXPAND_VIEW_ANIMATION_TIME
+        [UIView animateWithDuration:VIEW_ANIMATION_TIME
                          animations:^{
                              CGRect frame = infoPlayView.frame;
                              frame.origin.y = 40;
                              frame.size.height = self.view.frame.size.height - frame.origin.y - self.tabBar.frame.size.height;
-                             infoPlayView.frame =  frame;
+                             infoPlayView.frame = frame;
                              infoPlayView.expanded = true;
-                             
                          }
                          completion:^(BOOL finished){
                              [infoPlayView.titleLableLarge setHidden:false];

@@ -10,7 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 
 #define IMAGE_VIEW_CONSTANT 10.0
-#define EXPAND_VIEW_ANIMATION_TIME .3
+#define VIEW_ANIMATION_TIME .3
 
 @interface InfoPlayView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightImageViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftImageViewConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *downButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UILabel *radioAparatLabel;
 
 @property (nonatomic, assign) BOOL expanded;
 @property (nonatomic, assign) CGFloat leftImageViewConstraintConstant;

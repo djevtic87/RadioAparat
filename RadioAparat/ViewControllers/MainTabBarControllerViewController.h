@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) AVPlayer* player;
 
+-(void) showInfoView:(BOOL)show;
+
 @end
