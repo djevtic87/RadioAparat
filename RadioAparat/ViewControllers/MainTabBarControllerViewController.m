@@ -133,7 +133,7 @@
         [UIView animateWithDuration:VIEW_ANIMATION_TIME
                          animations:^{
                              CGRect frame = infoPlayView.frame;
-                             frame.origin.y = 40;
+                             frame.origin.y = [UIApplication sharedApplication].statusBarFrame.size.height;
                              frame.size.height = self.view.frame.size.height - frame.origin.y - self.tabBar.frame.size.height;
                              infoPlayView.frame = frame;
                              infoPlayView.expanded = true;

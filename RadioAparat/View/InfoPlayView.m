@@ -21,6 +21,8 @@
 
 -(void) setExpanded:(BOOL)expanded {
     if (expanded) {
+        // Expand view.
+        self.alpha = 1.0;
         [self.titleLabel setHidden:true];
         [self.downButton setHidden:false];
         [self.shareButton setHidden:false];
@@ -31,6 +33,8 @@
         self.rightImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
         [self layoutIfNeeded];
     } else {
+        // Show small view
+        self.alpha = .95;
         [self.titleLabel setHidden:false];
         [self.downButton setHidden:true];
         [self.shareButton setHidden:true];

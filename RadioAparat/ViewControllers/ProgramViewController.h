@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 #import "BaseViewController.h"
 
 @interface ProgramViewController : BaseViewController
+@property(strong,nonatomic) WKWebView *webView;
+@property (strong, nonatomic) NSString *productURL;
 
 @end
