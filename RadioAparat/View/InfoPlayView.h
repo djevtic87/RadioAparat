@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImageView+AFNetworking.h"
+#import "MarqueeLabel/MarqueeLabel.h"
 
 #define IMAGE_VIEW_CONSTANT 10.0
 #define VIEW_ANIMATION_TIME .3
 
 @interface InfoPlayView : UIView
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLableLarge;
+@property (weak, nonatomic) IBOutlet MarqueeLabel *titleLabel;
+@property (weak, nonatomic) IBOutlet MarqueeLabel *titleLableLarge;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topImageViewConstraint;

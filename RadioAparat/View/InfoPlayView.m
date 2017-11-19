@@ -48,6 +48,8 @@
     AVMetadataItem* metadata = [playerItem.timedMetadata lastObject];
     self.titleLabel.text = metadata.stringValue;
     self.titleLableLarge.text = metadata.stringValue;
+    self.titleLabel.scrollDuration = 12.0;
+    self.titleLableLarge.scrollDuration = 12.0;
     
     [LastFm sharedInstance].apiKey = @"ce9a96e3f484167e5bd81c663610a568";
     [LastFm sharedInstance].apiSecret = @"e967e63c5ced2da3be1e939ddd1a49b9";

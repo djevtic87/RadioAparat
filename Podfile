@@ -9,4 +9,5 @@ target 'RadioAparat' do
   pod 'FoldingTabBar', '~> 1.1'
   pod 'LastFm'
   pod 'AFNetworking'
+  pod 'MarqueeLabel'
 end
