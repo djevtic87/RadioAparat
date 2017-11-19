@@ -10,6 +10,10 @@
 #import "MainTabBarControllerViewController.h"
 #import "InfoPlayView.h"
 
+#define handle_tap(view, delegate, selector) do {\
+    view.userInteractionEnabled = YES;\
+    [view addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:delegate action:selector]];\
+} while(0)
 
 @interface MainTabBarControllerViewController () {
     InfoPlayView *infoPlayView;
@@ -30,12 +34,23 @@
     infoPlayView = [[[NSBundle mainBundle] loadNibNamed:@"InfoPlayView" owner:nil options:nil] lastObject];
     infoPlayView.frame = rect;
     
+    infoPlayView.bottomImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
+    infoPlayView.topImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
+    infoPlayView.rightImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
+    infoPlayView.leftImageViewConstraint.constant = infoPlayView.frame.size.width - infoPlayView.frame.size.height - IMAGE_VIEW_CONSTANT;
+    infoPlayView.leftImageViewConstraintConstant = infoPlayView.leftImageViewConstraint.constant;
+    
     [self.view addSubview:infoPlayView];
+    
+    [infoPlayView setHidden:true];
     
     // Alloc radio player.
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
     [playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
-    self.player = [AVPlayer playerWithPlayerItem:playerItem] ;
+    self.player = [AVPlayer playerWithPlayerItem:playerItem];
+    
+    // Added handler when user tap on infoPlayView
+    handle_tap(infoPlayView, self, @selector(onTapInfoPlayView:));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,6 +68,48 @@
         [infoPlayView updateViewWith:playerItem];
     }
 }
+
+#pragma mark - InfoPlayView tap handler
+
+#define EXPAND_VIEW_ANIMATION_TIME .4
+// The event handling method
+- (void)onTapInfoPlayView:(UITapGestureRecognizer *)recognizer
+{
+    if (infoPlayView.expanded) {
+        [UIView animateWithDuration:EXPAND_VIEW_ANIMATION_TIME
+                         animations:^{
+                             [infoPlayView.titleLableLarge setHidden:true];
+                             CGRect rect = self.view.frame;
+                             rect.size.height = self.tabBar.frame.size.height;
+                             rect.origin.y = self.view.frame.size.height - self.tabBar.frame.size.height - rect.size.height;
+                             infoPlayView.frame = rect;
+                             infoPlayView.expanded = false;
+                             
+                         }
+                         completion:^(BOOL finished) {
+                             // whatever you need to do when animations are complete
+                         }];
+    } else {
+        // Expand view.
+        [UIView animateWithDuration:EXPAND_VIEW_ANIMATION_TIME
+                         animations:^{
+                             CGRect frame = infoPlayView.frame;
+                             frame.origin.y = 40;
+                             frame.size.height = self.view.frame.size.height - frame.origin.y - self.tabBar.frame.size.height;
+                             infoPlayView.frame =  frame;
+                             infoPlayView.expanded = true;
+                             
+                         }
+                         completion:^(BOOL finished){
+                             [infoPlayView.titleLableLarge setHidden:false];
+                             // whatever you need to do when animations are complete
+                         }];
+    }
+    //CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    
+    //Do stuff here...
+}
+
 
 /*
 #pragma mark - Navigation

@@ -10,7 +10,39 @@
 #import "InfoPlayView.h"
 #import "LastFm.h"
 
-@implementation InfoPlayView
+@implementation InfoPlayView {
+    __weak IBOutlet UIButton *downButton;
+}
+
+@synthesize expanded = _expanded;
+
+-(BOOL)expanded {
+    return _expanded;
+}
+
+-(void) setExpanded:(BOOL)expanded {
+    if (expanded) {
+        [self.titleLabel setHidden:true];
+        [downButton setHidden:false];
+        self.bottomImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 10;
+        self.topImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
+        self.leftImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
+        self.rightImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
+        [self layoutIfNeeded];
+    } else {
+        [self.titleLabel setHidden:false];
+        [downButton setHidden:true];
+        self.topImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
+        self.bottomImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
+        self.leftImageViewConstraint.constant = self.leftImageViewConstraintConstant;
+        self.rightImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
+        [self layoutIfNeeded];
+    }
+    _expanded = expanded;
+}
+
+- (IBAction)downButtonPressed:(id)sender {
+}
 
 -(void) updateViewWith:(AVPlayerItem*) playerItem {
     //        for (AVMetadataItem* metadata in playerItem.timedMetadata)
@@ -19,6 +51,7 @@
     //        }
     AVMetadataItem* metadata = [playerItem.timedMetadata lastObject];
     self.titleLabel.text = metadata.stringValue;
+    self.titleLableLarge.text = metadata.stringValue;
     
     [LastFm sharedInstance].apiKey = @"ce9a96e3f484167e5bd81c663610a568";
     [LastFm sharedInstance].apiSecret = @"e967e63c5ced2da3be1e939ddd1a49b9";
@@ -63,7 +96,11 @@
         [self.imageView setImage:[UIImage imageNamed:@"RadioAparat.png"]];
         NSLog(@"Error getting track info: %@", error.description);
     }];
+    
+    [self setHidden:false];
 }
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
