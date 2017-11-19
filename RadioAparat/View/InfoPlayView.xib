@@ -37,22 +37,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dw-yN-sU3">
-                    <rect key="frame" x="0.0" y="0.0" width="362" height="55"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                    <state key="normal" title="⇣">
-                        <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8dw-yN-sU3">
+                    <rect key="frame" x="0.0" y="0.0" width="362" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="eCN-Aj-I6H"/>
+                    </constraints>
+                    <state key="normal" image="down_icon">
+                        <color key="titleColor" red="0.28627450980392155" green="0.82745098039215681" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
-                    <connections>
-                        <action selector="downButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="WRE-uq-1i6"/>
-                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Xdd-Ur-uMo" firstAttribute="top" secondItem="i2A-AI-Aqb" secondAttribute="bottom" constant="20" id="3oe-du-0ru"/>
                 <constraint firstItem="Xdd-Ur-uMo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="BoE-3Z-hSd"/>
+                <constraint firstItem="8dw-yN-sU3" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="IVe-At-V4e"/>
                 <constraint firstAttribute="trailing" secondItem="i2A-AI-Aqb" secondAttribute="trailing" constant="10" id="NUa-tl-gHH"/>
                 <constraint firstItem="i2A-AI-Aqb" firstAttribute="leading" secondItem="FCv-ZG-F7h" secondAttribute="trailing" constant="15" id="P1o-mn-Ih5"/>
                 <constraint firstItem="FCv-ZG-F7h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="34" id="PcJ-EF-koE"/>
@@ -60,13 +59,15 @@
                 <constraint firstItem="FCv-ZG-F7h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="g1C-K9-4Dc"/>
                 <constraint firstItem="i2A-AI-Aqb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="lkq-nu-riA"/>
                 <constraint firstItem="i2A-AI-Aqb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="287" id="lny-Bq-SyH"/>
+                <constraint firstItem="8dw-yN-sU3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mFP-K5-NdY"/>
+                <constraint firstItem="8dw-yN-sU3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="tNF-zU-sV4"/>
                 <constraint firstAttribute="trailing" secondItem="Xdd-Ur-uMo" secondAttribute="trailing" constant="16" id="vyR-f6-sHp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="bottomImageViewConstraint" destination="SnX-KT-r30" id="tTp-bU-vDL"/>
-                <outlet property="downButton" destination="8dw-yN-sU3" id="X6F-fl-CnT"/>
+                <outlet property="downButton" destination="8dw-yN-sU3" id="AvI-B9-tBe"/>
                 <outlet property="imageView" destination="i2A-AI-Aqb" id="f3M-uQ-txr"/>
                 <outlet property="leftImageViewConstraint" destination="lny-Bq-SyH" id="NdG-bU-3Je"/>
                 <outlet property="rightImageViewConstraint" destination="NUa-tl-gHH" id="Ouu-XA-Efu"/>
@@ -77,4 +78,7 @@
             <point key="canvasLocation" x="-28" y="-357.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="down_icon" width="128" height="128"/>
+    </resources>
 </document>

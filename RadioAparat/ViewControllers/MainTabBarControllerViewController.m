@@ -42,15 +42,29 @@
     
     [self.view addSubview:infoPlayView];
     
+    // By default info view is hidden.
     [infoPlayView setHidden:true];
+    
+    // Added guestures to hide and show music view info.
+    [infoPlayView.downButton addTarget:self action:@selector(hidePlayInfoView:) forControlEvents:UIControlEventTouchUpInside];
+
+    UISwipeGestureRecognizer *swipeGestureDown = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(hidePlayInfoView:)];
+    [swipeGestureDown setNumberOfTouchesRequired:1];
+    [swipeGestureDown setDirection:UISwipeGestureRecognizerDirectionDown];
+    [infoPlayView addGestureRecognizer:swipeGestureDown];
+    
+    UISwipeGestureRecognizer *swipeGestureUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showPlayInfoView:)];
+    [swipeGestureUp setNumberOfTouchesRequired:1];
+    [swipeGestureUp setDirection:UISwipeGestureRecognizerDirectionUp];
+    [infoPlayView addGestureRecognizer:swipeGestureUp];
+    
+    // Added handler when user tap on infoPlayView
+    handle_tap(infoPlayView, self, @selector(showPlayInfoView:));
     
     // Alloc radio player.
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
     [playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
     self.player = [AVPlayer playerWithPlayerItem:playerItem];
-    
-    // Added handler when user tap on infoPlayView
-    handle_tap(infoPlayView, self, @selector(onTapInfoPlayView:));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,25 +85,24 @@
 
 #pragma mark - InfoPlayView tap handler
 
-#define EXPAND_VIEW_ANIMATION_TIME .4
-// The event handling method
-- (void)onTapInfoPlayView:(UITapGestureRecognizer *)recognizer
-{
-    if (infoPlayView.expanded) {
-        [UIView animateWithDuration:EXPAND_VIEW_ANIMATION_TIME
-                         animations:^{
-                             [infoPlayView.titleLableLarge setHidden:true];
-                             CGRect rect = self.view.frame;
-                             rect.size.height = self.tabBar.frame.size.height;
-                             rect.origin.y = self.view.frame.size.height - self.tabBar.frame.size.height - rect.size.height;
-                             infoPlayView.frame = rect;
-                             infoPlayView.expanded = false;
-                             
-                         }
-                         completion:^(BOOL finished) {
-                             // whatever you need to do when animations are complete
-                         }];
-    } else {
+- (void)hidePlayInfoView:(id)sender {
+    [UIView animateWithDuration:EXPAND_VIEW_ANIMATION_TIME
+                     animations:^{
+                         [infoPlayView.titleLableLarge setHidden:true];
+                         CGRect rect = self.view.frame;
+                         rect.size.height = self.tabBar.frame.size.height;
+                         rect.origin.y = self.view.frame.size.height - self.tabBar.frame.size.height - rect.size.height;
+                         infoPlayView.frame = rect;
+                         infoPlayView.expanded = false;
+                         
+                     }
+                     completion:^(BOOL finished) {
+                         // whatever you need to do when animations are complete
+                     }];
+}
+
+- (void)showPlayInfoView:(id)sender {
+    if (!infoPlayView.expanded) {
         // Expand view.
         [UIView animateWithDuration:EXPAND_VIEW_ANIMATION_TIME
                          animations:^{
@@ -105,11 +118,7 @@
                              // whatever you need to do when animations are complete
                          }];
     }
-    //CGPoint location = [recognizer locationInView:[recognizer.view superview]];
-    
-    //Do stuff here...
 }
-
 
 /*
 #pragma mark - Navigation

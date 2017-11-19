@@ -11,7 +11,6 @@
 #import "LastFm.h"
 
 @implementation InfoPlayView {
-    __weak IBOutlet UIButton *downButton;
 }
 
 @synthesize expanded = _expanded;
@@ -23,7 +22,7 @@
 -(void) setExpanded:(BOOL)expanded {
     if (expanded) {
         [self.titleLabel setHidden:true];
-        [downButton setHidden:false];
+        [self.downButton setHidden:false];
         self.bottomImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 10;
         self.topImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
         self.leftImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
@@ -31,7 +30,7 @@
         [self layoutIfNeeded];
     } else {
         [self.titleLabel setHidden:false];
-        [downButton setHidden:true];
+        [self.downButton setHidden:true];
         self.topImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
         self.bottomImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
         self.leftImageViewConstraint.constant = self.leftImageViewConstraintConstant;
@@ -41,14 +40,7 @@
     _expanded = expanded;
 }
 
-- (IBAction)downButtonPressed:(id)sender {
-}
-
 -(void) updateViewWith:(AVPlayerItem*) playerItem {
-    //        for (AVMetadataItem* metadata in playerItem.timedMetadata)
-    //        {
-    //            NSLog(@"\nkey: %@\nkeySpace: %@\ncommonKey: %@\nvalue: %@", [metadata.key description], metadata.keySpace, metadata.commonKey, metadata.stringValue);
-    //        }
     AVMetadataItem* metadata = [playerItem.timedMetadata lastObject];
     self.titleLabel.text = metadata.stringValue;
     self.titleLableLarge.text = metadata.stringValue;
