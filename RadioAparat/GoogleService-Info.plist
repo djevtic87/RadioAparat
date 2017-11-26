@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>401928416866-1g3d52c2j3idrlulceqd1t57jsvvip65.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.401928416866-1g3d52c2j3idrlulceqd1t57jsvvip65</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCk17lxT2t8t9GL6KUJGLNCpPzFn-G2YuI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>401928416866</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.radioaparat.RadioAparat</string>
+	<key>PROJECT_ID</key>
+	<string>radioaparat-6965e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>radioaparat-6965e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:401928416866:ios:027dd8bb4d277719</string>
+	<key>DATABASE_URL</key>
+	<string>https://radioaparat-6965e.firebaseio.com</string>
+</dict>
+</plist>

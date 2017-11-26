@@ -10,4 +10,8 @@ target 'RadioAparat' do
   pod 'LastFm'
   pod 'AFNetworking'
   pod 'MarqueeLabel'
+  pod 'Firebase/Core'
+  pod 'FirebaseUI/Auth'
+  pod 'FirebaseUI/Google'
+  pod 'FirebaseUI/Phone'
 end

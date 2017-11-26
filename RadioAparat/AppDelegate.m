@@ -16,6 +16,8 @@
 //helpers
 #import "YALAnimatingTabBarConstants.h"
 
+@import Firebase;
+
 @interface AppDelegate ()
 
 @end
@@ -26,6 +28,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [self setupYALTabBarControllerAndAudioPlayer];
+    [FIRApp configure];
     return YES;
 }
 

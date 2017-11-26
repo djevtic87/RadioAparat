@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-@interface ProfileViewController : BaseViewController
+@import FirebaseAuth;
+@import GoogleSignIn;
+
+@interface ProfileViewController : BaseViewController <GIDSignInDelegate, GIDSignInUIDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

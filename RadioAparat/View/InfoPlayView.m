@@ -74,9 +74,10 @@
     //[LastFm sharedInstance].username = username;
     
     NSString* metadataStringValue = metadata.stringValue; // @"Goribor-Burle";
+    NSLog(@"metadataStringValue: %@", metadataStringValue);
     
-    NSString* artist = @"";
-    NSString* song = @"";
+    NSString* artist;
+    NSString* song;
     NSUInteger index = [metadataStringValue rangeOfString:@"-"].location;
     if (index != NSNotFound) {
         artist = [metadataStringValue substringToIndex:index];
@@ -84,8 +85,12 @@
         artist = [artist stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         song = [song stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
         NSLog(@"Getting image for: %@ - %@", artist, song);
-    } else {
-        NSLog(@"Error getting artist and track info.");
+    }
+    
+    // Update song and artist info.
+    if (artist == nil || song == nil) {
+        artist = @"";
+        song = @"";
     }
     
     [[LastFm sharedInstance] getInfoForTrack:song artist:artist successHandler:^(NSDictionary *result) {

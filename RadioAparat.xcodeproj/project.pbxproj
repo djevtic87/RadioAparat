@@ -20,6 +20,7 @@
 		D6A2D4AF1FB5D1760085802C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4AE1FB5D1760085802C /* BaseViewController.m */; };
 		D6A2D4B21FB5F6FB0085802C /* InfoPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A2D4B11FB5F6FB0085802C /* InfoPlayView.xib */; };
 		D6A2D4B61FB5F81B0085802C /* InfoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4B51FB5F81B0085802C /* InfoPlayView.m */; };
+		D6F58D1E1FCAEE860077B31A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6F58D1D1FCAEE860077B31A /* GoogleService-Info.plist */; };
 		EC894AD7FCE26A5CF0E7330B /* libPods-RadioAparat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F95553D093137C86CA7B14B /* libPods-RadioAparat.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		D6A2D4B11FB5F6FB0085802C /* InfoPlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoPlayView.xib; sourceTree = "<group>"; };
 		D6A2D4B41FB5F81B0085802C /* InfoPlayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoPlayView.h; sourceTree = "<group>"; };
 		D6A2D4B51FB5F81B0085802C /* InfoPlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoPlayView.m; sourceTree = "<group>"; };
+		D6F58D1D1FCAEE860077B31A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				D624BF0C1FB5A7880004C97E /* Assets.xcassets */,
 				D624BF0E1FB5A7880004C97E /* LaunchScreen.storyboard */,
 				D624BF111FB5A7880004C97E /* Info.plist */,
+				D6F58D1D1FCAEE860077B31A /* GoogleService-Info.plist */,
 				D624BF121FB5A7890004C97E /* main.m */,
 				D6A2D4AC1FB5B61D0085802C /* ViewControllers */,
 				D6A2D4B31FB5F70F0085802C /* View */,
@@ -209,6 +212,7 @@
 			files = (
 				D624BF101FB5A7880004C97E /* LaunchScreen.storyboard in Resources */,
 				D624BF0D1FB5A7880004C97E /* Assets.xcassets in Resources */,
+				D6F58D1E1FCAEE860077B31A /* GoogleService-Info.plist in Resources */,
 				D6A2D4B21FB5F6FB0085802C /* InfoPlayView.xib in Resources */,
 				D624BF0B1FB5A7880004C97E /* Main.storyboard in Resources */,
 			);
@@ -238,9 +242,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RadioAparat/Pods-RadioAparat-resources.sh",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
