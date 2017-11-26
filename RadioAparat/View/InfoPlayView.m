@@ -7,6 +7,7 @@
 //
 
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import "InfoPlayView.h"
 #import "LastFm.h"
 
@@ -48,6 +49,18 @@
     _expanded = expanded;
 }
 
+-(void)updateNowPlayingInfoCenter:(NSString*)title forArtist:(NSString*)artist forAlbumTitle:(NSString*)albumTitle forImage:(UIImage*)artwork {
+    NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
+    MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithBoundsSize:CGSizeMake(100, 100) requestHandler:^(CGSize size) { return artwork; }];
+    
+    [songInfo setObject:title forKey:MPMediaItemPropertyTitle];
+    [songInfo setObject:artist forKey:MPMediaItemPropertyArtist];
+    [songInfo setObject:albumTitle forKey:MPMediaItemPropertyAlbumTitle];
+    [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
+    
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
+}
+
 -(void) updateViewWith:(AVPlayerItem*) playerItem {
     AVMetadataItem* metadata = [playerItem.timedMetadata lastObject];
     self.titleLabel.text = metadata.stringValue;
@@ -77,6 +90,9 @@
     
     [[LastFm sharedInstance] getInfoForTrack:song artist:artist successHandler:^(NSDictionary *result) {
         NSLog(@"result: %@", result);
+        NSString* title = [result objectForKey:@"name"];
+        NSString* artist = [result objectForKey:@"artist"];
+        NSString* albumTitle = [result objectForKey:@"album"];
         __weak UIImageView *weakImageView = self.imageView;
         [self.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[result objectForKey:@"image"]]
                                       placeholderImage:[UIImage imageNamed:@"RadioAparat.png"]
@@ -89,13 +105,16 @@
                                                                       options:UIViewAnimationOptionTransitionCrossDissolve
                                                                    animations:^{
                                                                        strongImageView.image = image;
+                                                                       [self updateNowPlayingInfoCenter:title forArtist:artist forAlbumTitle:albumTitle forImage:image];
                                                                    }
                                                                    completion:NULL];
                                                }
                                                failure:NULL];
         
     } failureHandler:^(NSError *error) {
-        [self.imageView setImage:[UIImage imageNamed:@"RadioAparat.png"]];
+        UIImage* image = [UIImage imageNamed:@"RadioAparat.png"];
+        [self.imageView setImage:image];
+        [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:image];
         NSLog(@"Error getting track info: %@", error.description);
     }];
 }

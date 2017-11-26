@@ -42,15 +42,7 @@
 - (void)tabBarDidSelectExtraRightItem:(YALFoldingTabBar *)tabBar {
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     MainTabBarControllerViewController *tabBarController = (MainTabBarControllerViewController *) appDelegate.window.rootViewController;
-    if ((tabBarController.player.rate != 0) && (tabBarController.player.error == nil)) {
-        [tabBarController.player pause];
-        [tabBar changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"play_icon"]];
-        [tabBarController showInfoView:false];
-    } else {
-        [tabBarController.player play];
-        [tabBar changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"pause_icon"]];
-        [tabBarController showInfoView:true];
-    }
+    [tabBarController playPause];
 }
 
 /*

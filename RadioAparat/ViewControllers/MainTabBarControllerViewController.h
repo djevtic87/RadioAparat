@@ -17,4 +17,6 @@
 
 -(void) showInfoView:(BOOL)show;
 
+-(void)playPause;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <AFNetworking/AFNetworking.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import "MainTabBarControllerViewController.h"
 #import "InfoPlayView.h"
 
@@ -68,11 +69,44 @@
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
     [playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
     self.player = [AVPlayer playerWithPlayerItem:playerItem];
+    
+    [self setupNowPlayingInfoCenter];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) setupNowPlayingInfoCenter {
+    [UIApplication.sharedApplication beginReceivingRemoteControlEvents];
+
+    MPRemoteCommandCenter *remoteCommandCenter = [MPRemoteCommandCenter sharedCommandCenter];
+    [[remoteCommandCenter togglePlayPauseCommand] addTarget:self action:@selector(playPause)];
+    [[remoteCommandCenter pauseCommand] addTarget:self action:@selector(playPause)];
+    [[remoteCommandCenter playCommand] addTarget:self action:@selector(playPause)];
+    [[remoteCommandCenter stopCommand] addTarget:self action:@selector(playPause)];
+    
+    [[remoteCommandCenter likeCommand] addTarget:self action:@selector(like)];
+//    [[remoteCommandCenter dislikeCommand] addTarget:self action:@selector(dislike)];
+//    [[remoteCommandCenter bookmarkCommand] addTarget:self action:@selector(bookmark)];
+//    [[remoteCommandCenter ratingCommand] addTarget:self action:@selector(ratingCommand)];
+}
+
+-(void)playPause {
+    if ((self.player.rate != 0) && (self.player.error == nil)) {
+        [self.player pause];
+        [self.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"play_icon"]];
+        [self showInfoView:false];
+    } else {
+        [self.player play];
+        [self.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"pause_icon"]];
+        [self showInfoView:true];
+    }
+}
+
+-(void)like {
+    NSLog(@"Like button pressed");
 }
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
