@@ -29,6 +29,9 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     [self setupYALTabBarControllerAndAudioPlayer];
     [FIRApp configure];
+    
+    // Set up firebase database.
+    self.userDatabase = [[UserDatabase alloc] init];
     return YES;
 }
 

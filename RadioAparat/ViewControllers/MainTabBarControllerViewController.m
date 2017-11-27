@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "MainTabBarControllerViewController.h"
 #import "InfoPlayView.h"
+#import "AppDelegate.h"
 
 #define handle_tap(view, delegate, selector) do {\
     view.userInteractionEnabled = YES;\
@@ -45,7 +46,6 @@
     
     // By default info view is hidden.
     [infoPlayView setHidden:true];
-    
     
     [infoPlayView.downButton addTarget:self action:@selector(hidePlayInfoView:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -105,8 +105,9 @@
     }
 }
 
--(void)like {
-    NSLog(@"Like button pressed");
+-(void) like {
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [appDelegate.userDatabase storeSong:infoPlayView.titleLabel.text];
 }
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object

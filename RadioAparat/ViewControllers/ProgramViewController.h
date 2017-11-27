@@ -11,7 +11,7 @@
 #import "BaseViewController.h"
 
 @interface ProgramViewController : BaseViewController
-@property(strong,nonatomic) WKWebView *webView;
+@property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) NSString *productURL;
 
 @end

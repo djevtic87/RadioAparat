@@ -20,6 +20,9 @@ PODS:
   - Firebase/Core (4.6.0):
     - FirebaseAnalytics (= 4.0.5)
     - FirebaseCore (= 4.0.11)
+  - Firebase/Database (4.6.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.1)
   - FirebaseAnalytics (4.0.5):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -31,6 +34,10 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.11):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.1.1):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
   - FirebaseInstanceID (2.0.6)
   - FirebaseUI/Auth (4.5.0):
     - Firebase/Auth (~> 4.2)
@@ -69,6 +76,7 @@ PODS:
     - KissXML/Core
   - LastFm (1.17.0):
     - KissXML (~> 5.0.3)
+  - leveldb-library (1.20)
   - MarqueeLabel (3.1.3):
     - MarqueeLabel/ObjC (= 3.1.3)
   - MarqueeLabel/ObjC (3.1.3)
@@ -81,6 +89,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Firebase/Core
+  - Firebase/Database
   - FirebaseUI/Auth
   - FirebaseUI/Google
   - FirebaseUI/Phone
@@ -94,6 +103,7 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
   FirebaseAuth: e58563adb207a43910a2ed87fecb9fa7d556df5a
   FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
+  FirebaseDatabase: 2e6e8e110b93b9a6e7aac71774c769a363035cb1
   FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
   FirebaseUI: 883482fea73b73bbb488c55176f4c6ad128957eb
   FoldingTabBar: 3b1e54c0dfa6103e93e8d95d1e75a22c6d8e2843
@@ -103,9 +113,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   KissXML: d19dd6dc65e0dc721ba92b3077b8ebdd240f1c1e
   LastFm: a624fa250bbda5950fccbd068ea7950dcba2da1f
+  leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
   MarqueeLabel: baa5753dcbd36dca080e1f5c589a665aa5c906f1
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: ec50a454feba82828e60acbc0f5c3d433ae6f3ce
+PODFILE CHECKSUM: ccd7fbfaac03168ab309ca5baacf5f08df20a4d5
 
 COCOAPODS: 1.3.1

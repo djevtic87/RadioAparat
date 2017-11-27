@@ -11,6 +11,7 @@ target 'RadioAparat' do
   pod 'AFNetworking'
   pod 'MarqueeLabel'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/Phone'

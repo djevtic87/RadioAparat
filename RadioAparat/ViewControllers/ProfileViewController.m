@@ -9,6 +9,9 @@
 #import "ProfileViewController.h"
 #import "BaseViewController.h"
 #import "YALFoldingTabBar.h"
+#import "UserDatabase.h"
+#import "AppDelegate.h"
+#import "MainTabBarControllerViewController.h"
 
 @import Firebase;
 @import FirebaseAuth;
@@ -40,6 +43,9 @@
         [self.signInButton setHidden:false];
         [self.tableView setHidden:true];
     }
+    
+    self.appDelegate.userDatabase.tableViewToRefreshOnNewData = self.tableView;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,12 +86,33 @@
 }
 
 
-//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-//    <#code#>
-//}
-//
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    static NSString *MyIdentifier = @"SongCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+    
+    /*
+     *   If the cell is nil it means no cell was available for reuse and that we should
+     *   create a new one.
+     */
+    if (cell == nil) {
+        
+        /*
+         *   Actually create a new cell (with an identifier so that it can be dequeued).
+         */
+        
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    NSArray* songs = [self.appDelegate.userDatabase storedSongsForUser];
+    NSString* name = [songs objectAtIndex:indexPath.row];
+    [cell.textLabel setText:name];
+    
+    return cell;
+}
+
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [self.appDelegate.userDatabase storedSongsForUser].count;
 }
 //
 //- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {

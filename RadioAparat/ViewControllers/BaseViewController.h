@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainTabBarControllerViewController.h"
+#import "AppDelegate.h"
 
 @interface BaseViewController : UIViewController
+@property (nonatomic, weak) MainTabBarControllerViewController *tabBarController;
+@property (nonatomic, weak) AppDelegate *appDelegate;
 @end

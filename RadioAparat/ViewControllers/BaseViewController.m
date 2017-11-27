@@ -16,6 +16,23 @@
 @end
 
 @implementation BaseViewController
+@synthesize tabBarController = _tabBarController;
+@synthesize appDelegate = _appDelegate;
+
+-(MainTabBarControllerViewController*) tabBarController {
+    if (!_tabBarController) {
+        AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        _tabBarController = (MainTabBarControllerViewController *) appDelegate.window.rootViewController;
+    }
+    return _tabBarController;
+}
+
+-(AppDelegate*) appDelegate {
+    if (!_appDelegate) {
+        _appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    }
+    return _appDelegate;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,13 +41,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    MainTabBarControllerViewController *tabBarController = (MainTabBarControllerViewController *) appDelegate.window.rootViewController;
-    
-    if ((tabBarController.player.rate != 0) && (tabBarController.player.error == nil)) {
-        [tabBarController.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"pause_icon"]];
+    if ((self.tabBarController.player.rate != 0) && (self.tabBarController.player.error == nil)) {
+        [self.tabBarController.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"pause_icon"]];
     } else {
-        [tabBarController.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"play_icon"]];
+        [self.tabBarController.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"play_icon"]];
     }
 }
 

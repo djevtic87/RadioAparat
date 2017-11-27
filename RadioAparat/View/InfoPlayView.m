@@ -95,31 +95,48 @@
     
     [[LastFm sharedInstance] getInfoForTrack:song artist:artist successHandler:^(NSDictionary *result) {
         NSLog(@"result: %@", result);
-        NSString* title = [result objectForKey:@"name"];
-        NSString* artist = [result objectForKey:@"artist"];
-        NSString* albumTitle = [result objectForKey:@"album"];
-        __weak UIImageView *weakImageView = self.imageView;
-        [self.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:[result objectForKey:@"image"]]
-                                      placeholderImage:[UIImage imageNamed:@"RadioAparat.png"]
-                                               success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                                   UIImageView *strongImageView = weakImageView; // make local strong reference to protect against race conditions
-                                                   if (!strongImageView) return;
-                                                   
-                                                   [UIView transitionWithView:strongImageView
-                                                                     duration:0.3
-                                                                      options:UIViewAnimationOptionTransitionCrossDissolve
-                                                                   animations:^{
-                                                                       strongImageView.image = image;
-                                                                       [self updateNowPlayingInfoCenter:title forArtist:artist forAlbumTitle:albumTitle forImage:image];
-                                                                   }
-                                                                   completion:NULL];
-                                               }
-                                               failure:NULL];
+        NSString* titleLastFM = [result objectForKey:@"name"];
+        NSString* artistLastFM = [result objectForKey:@"artist"];
+        NSString* albumTitleLastFM = [result objectForKey:@"album"];
+        NSURL* imageURL = [result objectForKey:@"image"];
         
+        if (imageURL != nil) {
+            __weak UIImageView *weakImageView = self.imageView;
+            [self.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:imageURL]
+                                  placeholderImage:[UIImage imageNamed:@"RadioAparat.png"]
+                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                                               UIImageView *strongImageView = weakImageView; // make local strong reference to protect against race conditions
+                                               if (!strongImageView) return;
+                                               
+                                               [UIView transitionWithView:strongImageView
+                                                                 duration:0.3
+                                                                  options:UIViewAnimationOptionTransitionCrossDissolve
+                                                               animations:^{
+                                                                   strongImageView.image = image;
+                                                                   [self updateNowPlayingInfoCenter:titleLastFM forArtist:artistLastFM forAlbumTitle:albumTitleLastFM forImage:image];
+                                                               }
+                                                               completion:NULL];
+                                           }
+                                           failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+                                               NSLog(@"Error: %@", error.description);
+                                               if (titleLastFM != nil || artistLastFM != nil || albumTitleLastFM != nil) {
+                                                   [self updateNowPlayingInfoCenter:titleLastFM forArtist:artistLastFM forAlbumTitle:albumTitleLastFM forImage:[UIImage imageNamed:@"RadioAparat.png"]];
+                                               } else {
+                                                   [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:[UIImage imageNamed:@"RadioAparat.png"]];
+                                               }
+                                           }];
+        } else {
+            NSLog(@"No image URL found!");
+            if (titleLastFM != nil || artistLastFM != nil || albumTitleLastFM != nil) {
+                [self updateNowPlayingInfoCenter:titleLastFM forArtist:artistLastFM forAlbumTitle:albumTitleLastFM forImage:[UIImage imageNamed:@"RadioAparat.png"]];
+            } else {
+                [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:[UIImage imageNamed:@"RadioAparat.png"]];
+            }
+        }
     } failureHandler:^(NSError *error) {
-        UIImage* image = [UIImage imageNamed:@"RadioAparat.png"];
-        [self.imageView setImage:image];
-        [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:image];
+        UIImage* radioImage = [UIImage imageNamed:@"RadioAparat.png"];
+        [self.imageView setImage:radioImage];
+        [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:radioImage];
         NSLog(@"Error getting track info: %@", error.description);
     }];
 }

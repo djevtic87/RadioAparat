@@ -9,6 +9,7 @@
 #import <FoldingTabBar/FoldingTabBar.h>
 #import <AVFoundation/AVFoundation.h>
 #import "YALFoldingTabBarController.h"
+#import "UserDatabase.h"
 
 
 @interface MainTabBarControllerViewController : YALFoldingTabBarController

@@ -13,6 +13,7 @@
 		D624BF101FB5A7880004C97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0E1FB5A7880004C97E /* LaunchScreen.storyboard */; };
 		D624BF131FB5A7890004C97E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D624BF121FB5A7890004C97E /* main.m */; };
 		D6A118821FB8F377008F75F9 /* MainTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A118811FB8F377008F75F9 /* MainTabBarControllerViewController.m */; };
+		D6A2570F1FCB6DEB006F3205 /* UserDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2570E1FCB6DEB006F3205 /* UserDatabase.m */; };
 		D6A2D4A21FB5B5DB0085802C /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4A11FB5B5DB0085802C /* ProgramViewController.m */; };
 		D6A2D4A51FB5B5F60085802C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4A41FB5B5F60085802C /* ChatViewController.m */; };
 		D6A2D4A81FB5B6070085802C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4A71FB5B6070085802C /* ProfileViewController.m */; };
@@ -38,6 +39,8 @@
 		D624BF121FB5A7890004C97E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D6A118801FB8F377008F75F9 /* MainTabBarControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarControllerViewController.h; sourceTree = "<group>"; };
 		D6A118811FB8F377008F75F9 /* MainTabBarControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarControllerViewController.m; sourceTree = "<group>"; };
+		D6A2570D1FCB6DEB006F3205 /* UserDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDatabase.h; sourceTree = "<group>"; };
+		D6A2570E1FCB6DEB006F3205 /* UserDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserDatabase.m; sourceTree = "<group>"; };
 		D6A2D4A01FB5B5DB0085802C /* ProgramViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgramViewController.h; sourceTree = "<group>"; };
 		D6A2D4A11FB5B5DB0085802C /* ProgramViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgramViewController.m; sourceTree = "<group>"; };
 		D6A2D4A31FB5B5F60085802C /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
@@ -114,10 +117,20 @@
 				D624BF111FB5A7880004C97E /* Info.plist */,
 				D6F58D1D1FCAEE860077B31A /* GoogleService-Info.plist */,
 				D624BF121FB5A7890004C97E /* main.m */,
+				D6A2570A1FCB6D64006F3205 /* Model */,
 				D6A2D4AC1FB5B61D0085802C /* ViewControllers */,
 				D6A2D4B31FB5F70F0085802C /* View */,
 			);
 			path = RadioAparat;
+			sourceTree = "<group>";
+		};
+		D6A2570A1FCB6D64006F3205 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6A2570D1FCB6DEB006F3205 /* UserDatabase.h */,
+				D6A2570E1FCB6DEB006F3205 /* UserDatabase.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D6A2D4AC1FB5B61D0085802C /* ViewControllers */ = {
@@ -183,6 +196,7 @@
 				TargetAttributes = {
 					D624BEFF1FB5A7880004C97E = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -243,9 +257,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RadioAparat/Pods-RadioAparat-resources.sh",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle",
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebaseGoogleAuthUI.bundle,
+				$PODS_CONFIGURATION_BUILD_DIR/FirebaseUI/FirebasePhoneAuthUI.bundle,
 				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
@@ -286,6 +300,7 @@
 				D6A2D4A21FB5B5DB0085802C /* ProgramViewController.m in Sources */,
 				D624BF131FB5A7890004C97E /* main.m in Sources */,
 				D6A2D4A51FB5B5F60085802C /* ChatViewController.m in Sources */,
+				D6A2570F1FCB6DEB006F3205 /* UserDatabase.m in Sources */,
 				D6A2D4AB1FB5B6150085802C /* SettingsViewController.m in Sources */,
 				D624BF051FB5A7880004C97E /* AppDelegate.m in Sources */,
 				D6A118821FB8F377008F75F9 /* MainTabBarControllerViewController.m in Sources */,
@@ -426,12 +441,15 @@
 			baseConfigurationReference = 74B5C052705F30BC04380824 /* Pods-RadioAparat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YAMR65W456;
 				INFOPLIST_FILE = RadioAparat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioaparat.RadioAparat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -441,12 +459,14 @@
 			baseConfigurationReference = A1253FAD58DCE07D34C112C6 /* Pods-RadioAparat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YAMR65W456;
 				INFOPLIST_FILE = RadioAparat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.radioaparat.RadioAparat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
