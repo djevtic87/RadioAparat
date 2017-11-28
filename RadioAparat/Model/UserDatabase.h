@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "Song.h"
 
 @interface UserDatabase : NSObject
-
-- (NSArray*) storedSongsForUser;
-- (void) storeSong:(NSString*) song;
-
 @property (weak, nonatomic) UITableView *tableViewToRefreshOnNewData;
+
+-(NSUInteger) numberOfStoredSongs;
+-(Song*) getSongForIndex:(NSUInteger)index;
+
+// metadata e.g. Yaeji - Raingurl
+- (void) storeSongForMetadata:(NSString*)metadata;
 
 @end

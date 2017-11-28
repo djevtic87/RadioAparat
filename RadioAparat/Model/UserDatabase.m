@@ -7,13 +7,15 @@
 //
 
 #import "UserDatabase.h"
+#import "Song.h"
+
 @import FirebaseDatabase;
 @import FirebaseAuth;
 
 @interface UserDatabase ()
 @property (nonatomic, retain) FIRDatabaseReference *databaseReferenceForUser;
+// Array of liked songs
 @property (nonatomic, retain) NSMutableArray *likedSongs;
-@property (nonatomic, retain) NSMutableArray *tableViewToReloadOnNewData;
 @end
 
 @implementation UserDatabase
@@ -32,16 +34,19 @@
     return _databaseReferenceForUser;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
-        self.likedSongs = [[NSMutableArray alloc] init];
         [self.databaseReferenceForUser observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             //NSLog(@"new data: %@" ,[snapshot.value description]);
             id value = snapshot.value;
             if (snapshot.value != nil && ![value isKindOfClass:[NSNull class]]) {
-                self.likedSongs = value;
+                self.likedSongs = [[NSMutableArray alloc] init];
+                NSArray* songs = value;
+                for (NSString* s in songs) {
+                    Song* song = [[Song alloc] initWithMetadata:s];
+                    [self.likedSongs addObject:song];
+                }
                 if (self.tableViewToRefreshOnNewData != nil) {
                     [self.tableViewToRefreshOnNewData reloadData];
                 }
@@ -54,13 +59,22 @@
     return self;
 }
 
-- (NSArray* ) storedSongsForUser {
-    return [self.likedSongs copy];
+-(NSUInteger) numberOfStoredSongs {
+    return [self.likedSongs count];
 }
 
-- (void) storeSong:(NSString*) song {
-    [self.likedSongs addObject:song];
-    [self.databaseReferenceForUser setValue:self.likedSongs];
+-(Song*) getSongForIndex:(NSUInteger)index {
+    return [self.likedSongs objectAtIndex:index];
 }
 
+- (void) storeSongForMetadata:(NSString*)metadata {
+    NSMutableArray* songsToStore = [[NSMutableArray alloc] init];
+    for (Song* s in self.likedSongs) {
+        [songsToStore addObject:s.metadataStringValue];
+    }
+    
+    [songsToStore addObject:metadata];
+
+    [self.databaseReferenceForUser setValue:songsToStore];
+}
 @end

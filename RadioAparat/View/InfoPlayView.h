@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIImageView+AFNetworking.h"
 #import "MarqueeLabel/MarqueeLabel.h"
 
 #define IMAGE_VIEW_CONSTANT 10.0

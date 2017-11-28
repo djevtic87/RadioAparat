@@ -12,6 +12,7 @@
 		D624BF0D1FB5A7880004C97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0C1FB5A7880004C97E /* Assets.xcassets */; };
 		D624BF101FB5A7880004C97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0E1FB5A7880004C97E /* LaunchScreen.storyboard */; };
 		D624BF131FB5A7890004C97E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D624BF121FB5A7890004C97E /* main.m */; };
+		D68D31BF1FCDABF000542DFF /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = D68D31BE1FCDABF000542DFF /* Song.m */; };
 		D6A118821FB8F377008F75F9 /* MainTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A118811FB8F377008F75F9 /* MainTabBarControllerViewController.m */; };
 		D6A2570F1FCB6DEB006F3205 /* UserDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2570E1FCB6DEB006F3205 /* UserDatabase.m */; };
 		D6A2D4A21FB5B5DB0085802C /* ProgramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A2D4A11FB5B5DB0085802C /* ProgramViewController.m */; };
@@ -37,6 +38,8 @@
 		D624BF0F1FB5A7880004C97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D624BF111FB5A7880004C97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D624BF121FB5A7890004C97E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D68D31BD1FCDABF000542DFF /* Song.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		D68D31BE1FCDABF000542DFF /* Song.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		D6A118801FB8F377008F75F9 /* MainTabBarControllerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarControllerViewController.h; sourceTree = "<group>"; };
 		D6A118811FB8F377008F75F9 /* MainTabBarControllerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabBarControllerViewController.m; sourceTree = "<group>"; };
 		D6A2570D1FCB6DEB006F3205 /* UserDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDatabase.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 			children = (
 				D6A2570D1FCB6DEB006F3205 /* UserDatabase.h */,
 				D6A2570E1FCB6DEB006F3205 /* UserDatabase.m */,
+				D68D31BD1FCDABF000542DFF /* Song.h */,
+				D68D31BE1FCDABF000542DFF /* Song.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				D6A2D4A51FB5B5F60085802C /* ChatViewController.m in Sources */,
 				D6A2570F1FCB6DEB006F3205 /* UserDatabase.m in Sources */,
 				D6A2D4AB1FB5B6150085802C /* SettingsViewController.m in Sources */,
+				D68D31BF1FCDABF000542DFF /* Song.m in Sources */,
 				D624BF051FB5A7880004C97E /* AppDelegate.m in Sources */,
 				D6A118821FB8F377008F75F9 /* MainTabBarControllerViewController.m in Sources */,
 				D6A2D4AF1FB5D1760085802C /* BaseViewController.m in Sources */,

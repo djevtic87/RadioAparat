@@ -9,9 +9,10 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "InfoPlayView.h"
-#import "LastFm.h"
+#import "Song.h"
 
 @implementation InfoPlayView {
+    Song *currentSong;
 }
 
 @synthesize expanded = _expanded;
@@ -49,18 +50,6 @@
     _expanded = expanded;
 }
 
--(void)updateNowPlayingInfoCenter:(NSString*)title forArtist:(NSString*)artist forAlbumTitle:(NSString*)albumTitle forImage:(UIImage*)artwork {
-    NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
-    MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithBoundsSize:CGSizeMake(100, 100) requestHandler:^(CGSize size) { return artwork; }];
-    
-    [songInfo setObject:title forKey:MPMediaItemPropertyTitle];
-    [songInfo setObject:artist forKey:MPMediaItemPropertyArtist];
-    [songInfo setObject:albumTitle forKey:MPMediaItemPropertyAlbumTitle];
-    [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
-    
-    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];
-}
-
 -(void) updateViewWith:(AVPlayerItem*) playerItem {
     AVMetadataItem* metadata = [playerItem.timedMetadata lastObject];
     self.titleLabel.text = metadata.stringValue;
@@ -68,79 +57,10 @@
     self.titleLabel.scrollDuration = 12.0;
     self.titleLableLarge.scrollDuration = 12.0;
     
-    [LastFm sharedInstance].apiKey = @"ce9a96e3f484167e5bd81c663610a568";
-    [LastFm sharedInstance].apiSecret = @"e967e63c5ced2da3be1e939ddd1a49b9";
-    //[LastFm sharedInstance].session = session;
-    //[LastFm sharedInstance].username = username;
+    currentSong = [[Song alloc] initWithMetadata: metadata.stringValue];
     
-    NSString* metadataStringValue = metadata.stringValue; // @"Goribor-Burle";
-    NSLog(@"metadataStringValue: %@", metadataStringValue);
-    
-    NSString* artist;
-    NSString* song;
-    NSUInteger index = [metadataStringValue rangeOfString:@"-"].location;
-    if (index != NSNotFound) {
-        artist = [metadataStringValue substringToIndex:index];
-        song = [metadataStringValue substringFromIndex:index + 1];
-        artist = [artist stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-        song = [song stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
-        NSLog(@"Getting image for: %@ - %@", artist, song);
-    }
-    
-    // Update song and artist info.
-    if (artist == nil || song == nil) {
-        artist = @"";
-        song = @"";
-    }
-    
-    [[LastFm sharedInstance] getInfoForTrack:song artist:artist successHandler:^(NSDictionary *result) {
-        NSLog(@"result: %@", result);
-        NSString* titleLastFM = [result objectForKey:@"name"];
-        NSString* artistLastFM = [result objectForKey:@"artist"];
-        NSString* albumTitleLastFM = [result objectForKey:@"album"];
-        NSURL* imageURL = [result objectForKey:@"image"];
-        
-        if (imageURL != nil) {
-            __weak UIImageView *weakImageView = self.imageView;
-            [self.imageView setImageWithURLRequest:[NSURLRequest requestWithURL:imageURL]
-                                  placeholderImage:[UIImage imageNamed:@"RadioAparat.png"]
-                                           success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                               UIImageView *strongImageView = weakImageView; // make local strong reference to protect against race conditions
-                                               if (!strongImageView) return;
-                                               
-                                               [UIView transitionWithView:strongImageView
-                                                                 duration:0.3
-                                                                  options:UIViewAnimationOptionTransitionCrossDissolve
-                                                               animations:^{
-                                                                   strongImageView.image = image;
-                                                                   [self updateNowPlayingInfoCenter:titleLastFM forArtist:artistLastFM forAlbumTitle:albumTitleLastFM forImage:image];
-                                                               }
-                                                               completion:NULL];
-                                           }
-                                           failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                               NSLog(@"Error: %@", error.description);
-                                               if (titleLastFM != nil || artistLastFM != nil || albumTitleLastFM != nil) {
-                                                   [self updateNowPlayingInfoCenter:titleLastFM forArtist:artistLastFM forAlbumTitle:albumTitleLastFM forImage:[UIImage imageNamed:@"RadioAparat.png"]];
-                                               } else {
-                                                   [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:[UIImage imageNamed:@"RadioAparat.png"]];
-                                               }
-                                           }];
-        } else {
-            NSLog(@"No image URL found!");
-            if (titleLastFM != nil || artistLastFM != nil || albumTitleLastFM != nil) {
-                [self updateNowPlayingInfoCenter:titleLastFM forArtist:artistLastFM forAlbumTitle:albumTitleLastFM forImage:[UIImage imageNamed:@"RadioAparat.png"]];
-            } else {
-                [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:[UIImage imageNamed:@"RadioAparat.png"]];
-            }
-        }
-    } failureHandler:^(NSError *error) {
-        UIImage* radioImage = [UIImage imageNamed:@"RadioAparat.png"];
-        [self.imageView setImage:radioImage];
-        [self updateNowPlayingInfoCenter:metadataStringValue forArtist:@"" forAlbumTitle:@"" forImage:radioImage];
-        NSLog(@"Error getting track info: %@", error.description);
-    }];
+    [currentSong setSongImageInImageView:self.imageView];
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

@@ -12,6 +12,7 @@
 #import "UserDatabase.h"
 #import "AppDelegate.h"
 #import "MainTabBarControllerViewController.h"
+#import "Song.h"
 
 @import Firebase;
 @import FirebaseAuth;
@@ -68,7 +69,6 @@
         GIDAuthentication *authentication = user.authentication;
         FIRAuthCredential *credential = [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken accessToken:authentication.accessToken];
         
-        
         [[FIRAuth auth] signInWithCredential:credential completion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
             if (user) {
                 [self.signInButton setHidden:true];
@@ -84,7 +84,6 @@
         [self.tableView setHidden:true];
     }
 }
-
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     static NSString *MyIdentifier = @"SongCell";
@@ -103,60 +102,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    
-    NSArray* songs = [self.appDelegate.userDatabase storedSongsForUser];
-    NSString* name = [songs objectAtIndex:indexPath.row];
-    [cell.textLabel setText:name];
+
+    Song *song = [self.appDelegate.userDatabase getSongForIndex:indexPath.row];
+    [cell.textLabel setText:song.metadataStringValue];
+    [song setSongImageInImageView:cell.imageView];
     
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.appDelegate.userDatabase storedSongsForUser].count;
+    return [self.appDelegate.userDatabase numberOfStoredSongs];
 }
-//
-//- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
-//    <#code#>
-//}
-//
-//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-//    <#code#>
-//}
-//
-//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container { 
-//    <#code#>
-//}
-//
-//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-//    <#code#>
-//}
-//
-//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-//    <#code#>
-//}
-//
-//- (void)setNeedsFocusUpdate {
-//    <#code#>
-//}
-//
-//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-//    <#code#>
-//}
-//
-//- (void)updateFocusIfNeeded {
-//    <#code#>
-//}
 
 @end

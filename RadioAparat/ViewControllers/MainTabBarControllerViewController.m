@@ -107,7 +107,7 @@
 
 -(void) like {
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [appDelegate.userDatabase storeSong:infoPlayView.titleLabel.text];
+    [appDelegate.userDatabase storeSongForMetadata:infoPlayView.titleLabel.text];
 }
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
