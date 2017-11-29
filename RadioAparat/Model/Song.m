@@ -107,16 +107,22 @@
 -(void)updateNowPlayingInfoCenter:(NSString*)title forArtist:(NSString*)artist forAlbumTitle:(NSString*)albumTitle forImage:(UIImage*)artwork {
     NSMutableDictionary *songInfo = [[NSMutableDictionary alloc] init];
     MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithBoundsSize:CGSizeMake(100, 100) requestHandler:^(CGSize size) { return artwork; }];
+    NSLog(@"updateNowPlayingInfoCenter title: %@, artist: %@, albumTitle: %@", title, artist, albumTitle);
     
-    if (self.title != nil || self.artist != nil || self.album != nil) {
+    if (self.title != nil) {
         [songInfo setObject:title forKey:MPMediaItemPropertyTitle];
-        [songInfo setObject:artist forKey:MPMediaItemPropertyArtist];
-        [songInfo setObject:albumTitle forKey:MPMediaItemPropertyAlbumTitle];
     } else {
-        [songInfo setObject:self.metadataStringValue forKey:MPMediaItemPropertyTitle];
-        [songInfo setObject:@"" forKey:MPMediaItemPropertyArtist];
-        [songInfo setObject:@"" forKey:MPMediaItemPropertyAlbumTitle];
+        self.title = self.metadataStringValue;
     }
+    
+    if (self.artist != nil) {
+        [songInfo setObject:artist forKey:MPMediaItemPropertyArtist];
+    }
+    
+    if (self.album != nil) {
+        [songInfo setObject:albumTitle forKey:MPMediaItemPropertyAlbumTitle];
+    }
+
     [songInfo setObject:albumArt forKey:MPMediaItemPropertyArtwork];
     
     [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:songInfo];

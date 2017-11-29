@@ -67,14 +67,19 @@
     return [self.likedSongs objectAtIndex:index];
 }
 
-- (void) storeSongForMetadata:(NSString*)metadata {
+- (BOOL) storeSongForMetadata:(NSString*)metadata {
     NSMutableArray* songsToStore = [[NSMutableArray alloc] init];
     for (Song* s in self.likedSongs) {
         [songsToStore addObject:s.metadataStringValue];
     }
     
+    if ([songsToStore containsObject:metadata]) {
+        return false;
+    }
+    
     [songsToStore addObject:metadata];
 
     [self.databaseReferenceForUser setValue:songsToStore];
+    return true;
 }
 @end

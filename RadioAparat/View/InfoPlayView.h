@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet MarqueeLabel *titleLabel;
 @property (weak, nonatomic) IBOutlet MarqueeLabel *titleLableLarge;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *liveLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topImageViewConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomImageViewConstraint;

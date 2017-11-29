@@ -29,6 +29,7 @@
         [self.downButton setHidden:false];
         [self.shareButton setHidden:false];
         [self.radioAparatLabel setHidden:false];
+        [self.liveLabel setHidden:false];
         self.bottomImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 10;
         self.topImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
         self.leftImageViewConstraint.constant = IMAGE_VIEW_CONSTANT * 4;
@@ -41,6 +42,7 @@
         [self.downButton setHidden:true];
         [self.shareButton setHidden:true];
         [self.radioAparatLabel setHidden:true];
+        [self.liveLabel setHidden:true];
         self.topImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
         self.bottomImageViewConstraint.constant = IMAGE_VIEW_CONSTANT;
         self.leftImageViewConstraint.constant = self.leftImageViewConstraintConstant;

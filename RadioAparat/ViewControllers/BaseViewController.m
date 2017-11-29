@@ -54,9 +54,29 @@
 }
 
 - (void)tabBarDidSelectExtraRightItem:(YALFoldingTabBar *)tabBar {
-    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    MainTabBarControllerViewController *tabBarController = (MainTabBarControllerViewController *) appDelegate.window.rootViewController;
-    [tabBarController playPause];
+    [self.tabBarController playPause];
+}
+
+- (void)tabBarDidSelectExtraLeftItem:(YALFoldingTabBar *)tabBar {
+    if (![self.tabBarController like]) {
+        UIAlertController * alert = [UIAlertController
+                                     alertControllerWithTitle:@"Error"
+                                     message:@"You already liked the song!"
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        //Add Buttons
+        
+        UIAlertAction* okButton = [UIAlertAction
+                                    actionWithTitle:@"OK"
+                                    style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * action) {
+                                    }];
+        
+        //Add your buttons to alert controller
+        
+        [alert addAction:okButton];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 /*

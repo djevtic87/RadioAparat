@@ -17,6 +17,6 @@
 -(Song*) getSongForIndex:(NSUInteger)index;
 
 // metadata e.g. Yaeji - Raingurl
-- (void) storeSongForMetadata:(NSString*)metadata;
+- (BOOL) storeSongForMetadata:(NSString*)metadata;
 
 @end

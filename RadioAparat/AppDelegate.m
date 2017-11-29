@@ -70,14 +70,14 @@
                                                       leftItemImage:nil
                                                      rightItemImage:[UIImage imageNamed:@"play_icon"]];
     YALTabBarItem *item2 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"chats_icon"]
-                                                      leftItemImage:[UIImage imageNamed:@"new_chat_icon"]
+                                                      leftItemImage:nil
                                                      rightItemImage:[UIImage imageNamed:@"play_icon"]];
 
     tabBarController.leftBarItems = @[item1, item2];
     
     //prepare rightBarItems
     YALTabBarItem *item3 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"profile_icon"]
-                                                      leftItemImage:[UIImage imageNamed:@"edit_icon"]
+                                                      leftItemImage:nil
                                                      rightItemImage:[UIImage imageNamed:@"play_icon"]];
     YALTabBarItem *item4 = [[YALTabBarItem alloc] initWithItemImage:[UIImage imageNamed:@"settings_icon"]
                                                       leftItemImage:nil

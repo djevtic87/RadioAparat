@@ -33,7 +33,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="qAg-dX-Yvq"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -64,11 +64,23 @@
                     <color key="textColor" red="0.36788994073867798" green="0.35516387224197388" blue="0.5831567645072937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="«LIVE»" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aq-qI-hPO">
+                    <rect key="frame" x="151" y="34" width="61" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="8Ky-aQ-d9d"/>
+                        <constraint firstAttribute="width" constant="61" id="Rbv-UO-565"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" red="0.36788994069999997" green="0.35516387220000001" blue="0.58315676449999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Xdd-Ur-uMo" firstAttribute="top" secondItem="i2A-AI-Aqb" secondAttribute="bottom" constant="20" id="3oe-du-0ru"/>
+                <constraint firstItem="Xdd-Ur-uMo" firstAttribute="top" secondItem="9aq-qI-hPO" secondAttribute="bottom" constant="27" id="AQG-I9-FNI"/>
                 <constraint firstItem="Xdd-Ur-uMo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="BoE-3Z-hSd"/>
+                <constraint firstItem="9aq-qI-hPO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IYb-wJ-c8x"/>
                 <constraint firstItem="t9c-Tc-p7s" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="MAn-eD-0Fa"/>
                 <constraint firstAttribute="trailing" secondItem="i2A-AI-Aqb" secondAttribute="trailing" constant="10" id="NUa-tl-gHH"/>
                 <constraint firstItem="i2A-AI-Aqb" firstAttribute="leading" secondItem="FCv-ZG-F7h" secondAttribute="trailing" constant="15" id="P1o-mn-Ih5"/>
@@ -92,6 +104,7 @@
                 <outlet property="downButton" destination="8dw-yN-sU3" id="AvI-B9-tBe"/>
                 <outlet property="imageView" destination="i2A-AI-Aqb" id="f3M-uQ-txr"/>
                 <outlet property="leftImageViewConstraint" destination="lny-Bq-SyH" id="NdG-bU-3Je"/>
+                <outlet property="liveLabel" destination="9aq-qI-hPO" id="cse-MW-HBW"/>
                 <outlet property="radioAparatLabel" destination="dPn-a2-G9O" id="V4D-L5-SRv"/>
                 <outlet property="rightImageViewConstraint" destination="NUa-tl-gHH" id="Ouu-XA-Efu"/>
                 <outlet property="shareButton" destination="t9c-Tc-p7s" id="cew-7K-Fbt"/>
@@ -99,7 +112,7 @@
                 <outlet property="titleLableLarge" destination="Xdd-Ur-uMo" id="urZ-U9-Wb7"/>
                 <outlet property="topImageViewConstraint" destination="lkq-nu-riA" id="NqI-0e-teh"/>
             </connections>
-            <point key="canvasLocation" x="-28" y="-357.5"/>
+            <point key="canvasLocation" x="-28.5" y="-357.5"/>
         </view>
     </objects>
     <resources>

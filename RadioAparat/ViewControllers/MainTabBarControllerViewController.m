@@ -12,6 +12,15 @@
 #import "InfoPlayView.h"
 #import "AppDelegate.h"
 
+//model
+#import "YALTabBarItem.h"
+
+//controller
+#import "MainTabBarControllerViewController.h"
+
+//helpers
+#import "YALAnimatingTabBarConstants.h"
+
 #define handle_tap(view, delegate, selector) do {\
     view.userInteractionEnabled = YES;\
     [view addGestureRecognizer: [[UITapGestureRecognizer alloc] initWithTarget:delegate action:selector]];\
@@ -96,18 +105,35 @@
 -(void)playPause {
     if ((self.player.rate != 0) && (self.player.error == nil)) {
         [self.player pause];
-        [self.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"play_icon"]];
         [self showInfoView:false];
+        
+        for (YALTabBarItem *item in self.leftBarItems) {
+            item.leftImage = nil;
+            item.rightImage = [UIImage imageNamed:@"play_icon"];
+        }
+        for (YALTabBarItem *item in self.rightBarItems) {
+            item.leftImage = nil;
+            item.rightImage = [UIImage imageNamed:@"play_icon"];
+        }
     } else {
         [self.player play];
-        [self.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"pause_icon"]];
         [self showInfoView:true];
+        
+        for (YALTabBarItem *item in self.leftBarItems) {
+            item.rightImage = [UIImage imageNamed:@"pause_icon"];
+        }
+        for (YALTabBarItem *item in self.rightBarItems) {
+            item.rightImage = [UIImage imageNamed:@"pause_icon"];
+        }
     }
+    // Refresh the view.
+    [self setSelectedIndex:self.selectedIndex];
 }
 
--(void) like {
+
+-(BOOL) like {
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [appDelegate.userDatabase storeSongForMetadata:infoPlayView.titleLabel.text];
+    return [appDelegate.userDatabase storeSongForMetadata:infoPlayView.titleLabel.text];
 }
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
@@ -135,6 +161,16 @@
                            options:UIViewAnimationOptionTransitionCrossDissolve
                         animations:^{
                             [infoPlayView setHidden:!show];
+                            if (show) {
+                                for (YALTabBarItem *item in self.leftBarItems) {
+                                    item.leftImage = [UIImage imageNamed:@"fav_icon"];
+                                }
+                                for (YALTabBarItem *item in self.rightBarItems) {
+                                    item.leftImage = [UIImage imageNamed:@"fav_icon"];
+                                }
+                                // Refresh the view.
+                                [self setSelectedIndex:self.selectedIndex];
+                            }
                         }
                         completion:NULL];
         
