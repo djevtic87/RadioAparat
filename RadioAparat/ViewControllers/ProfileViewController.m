@@ -114,4 +114,9 @@
     return [self.appDelegate.userDatabase numberOfStoredSongs];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+}
+
+
 @end
