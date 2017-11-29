@@ -78,6 +78,7 @@
             break;
         case 3:
             [cell.textLabel setText:@"About"];
+            [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
             break;
         default:
             break;
@@ -134,6 +135,12 @@
                     [self presentViewController:view animated:YES completion:nil];
                 }
             }
+                break;
+            case 1:
+                [self performSegueWithIdentifier:@"showFeedback" sender:self];
+                break;
+            case 3:
+                [self performSegueWithIdentifier:@"showAbout" sender:self];
                 break;
             default:
                 break;
