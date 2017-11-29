@@ -25,8 +25,6 @@
 {
     self = [super init];
     if (self) {
-        self.songImage = [UIImage imageNamed:@"RadioAparat.png"];
-        
         [LastFm sharedInstance].apiKey = kApiKey;
         [LastFm sharedInstance].apiSecret = kApiSecret;
         //[LastFm sharedInstance].session = session;
@@ -52,6 +50,14 @@
 }
 
 -(void) setSongImageInImageView:(UIImageView* )imageView {
+    // Check if the image is already downloaded.
+    if (self.songImage) {
+        [imageView setImage:self.songImage];
+        return;
+    }
+    
+    [imageView setImage:[UIImage imageNamed:@"RadioAparat.png"]];
+    
     [[LastFm sharedInstance] getInfoForTrack:self.title artist:self.artist successHandler:^(NSDictionary *result) {
         NSLog(@"result: %@", result);
         self.title = [result objectForKey:@"name"];
@@ -85,7 +91,7 @@
                                                [self updateNowPlayingInfoCenter:self.title
                                                                       forArtist:self.artist
                                                                   forAlbumTitle:self.album
-                                                                       forImage:self.songImage];
+                                                                       forImage:[UIImage imageNamed:@"RadioAparat.png"]];
                                            }];
         } else {
             NSLog(@"No image URL found!");
@@ -95,11 +101,11 @@
                                     forImage:self.songImage];
         }
     } failureHandler:^(NSError *error) {
-        [imageView setImage:self.songImage];
+        [imageView setImage:[UIImage imageNamed:@"RadioAparat.png"]];
         [self updateNowPlayingInfoCenter:self.title
                                forArtist:self.artist
                            forAlbumTitle:self.album
-                                forImage:self.songImage];
+                                forImage:[UIImage imageNamed:@"RadioAparat.png"]];
         NSLog(@"Error getting track info: %@", error.description);
     }];
 }

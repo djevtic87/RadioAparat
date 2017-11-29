@@ -16,6 +16,7 @@
 @property (nonatomic, retain) FIRDatabaseReference *databaseReferenceForUser;
 // Array of liked songs
 @property (nonatomic, retain) NSMutableArray *likedSongs;
+@property (nonatomic, assign) BOOL updateTableView;
 @end
 
 @implementation UserDatabase
@@ -37,6 +38,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.updateTableView = false;
         [self.databaseReferenceForUser observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             //NSLog(@"new data: %@" ,[snapshot.value description]);
             id value = snapshot.value;
@@ -48,7 +50,11 @@
                     [self.likedSongs addObject:song];
                 }
                 if (self.tableViewToRefreshOnNewData != nil) {
-                    [self.tableViewToRefreshOnNewData reloadData];
+                    if (self.updateTableView) {
+                        self.updateTableView = false;
+                    } else {
+                        [self.tableViewToRefreshOnNewData reloadData];
+                    }
                 }
                 NSLog(@"Liked songs: %lu", self.likedSongs.count);
             } else {
@@ -77,9 +83,33 @@
         return false;
     }
     
-    [songsToStore addObject:metadata];
-
+    Song* songToAdd = [[Song alloc] initWithMetadata:metadata];
+    
+    [songsToStore addObject:songToAdd.metadataStringValue];
+    [self.likedSongs addObject:songToAdd];
+    
+    NSUInteger section = 0;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.tableViewToRefreshOnNewData numberOfRowsInSection:section] inSection:section];
+    
+    [self.tableViewToRefreshOnNewData beginUpdates];
+    [self.tableViewToRefreshOnNewData insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableViewToRefreshOnNewData endUpdates];
+    self.updateTableView = true;
+    
     [self.databaseReferenceForUser setValue:songsToStore];
     return true;
 }
+
+- (void) deleteSongForIndex:(NSUInteger)index {
+    NSMutableArray* songsToStore = [[NSMutableArray alloc] init];
+    [self.likedSongs removeObjectAtIndex:index];
+    for (Song* s in self.likedSongs) {
+        [songsToStore addObject:s.metadataStringValue];
+    }
+    
+    self.updateTableView = true;
+    
+    [self.databaseReferenceForUser setValue:songsToStore];
+}
+
 @end

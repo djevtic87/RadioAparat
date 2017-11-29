@@ -15,4 +15,5 @@ target 'RadioAparat' do
   pod 'FirebaseUI/Auth'
   pod 'FirebaseUI/Google'
   pod 'FirebaseUI/Phone'
+  pod 'MGSwipeTableCell'
 end

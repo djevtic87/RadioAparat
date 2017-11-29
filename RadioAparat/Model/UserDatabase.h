@@ -19,4 +19,6 @@
 // metadata e.g. Yaeji - Raingurl
 - (BOOL) storeSongForMetadata:(NSString*)metadata;
 
+- (void) deleteSongForIndex:(NSUInteger)index;
+
 @end

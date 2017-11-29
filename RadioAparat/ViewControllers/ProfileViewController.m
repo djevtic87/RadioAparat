@@ -86,27 +86,26 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    static NSString *MyIdentifier = @"SongCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
-    
-    /*
-     *   If the cell is nil it means no cell was available for reuse and that we should
-     *   create a new one.
-     */
-    if (cell == nil) {
-        
-        /*
-         *   Actually create a new cell (with an identifier so that it can be dequeued).
-         */
-        
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    static NSString * reuseIdentifier = @"programmaticCell";
+    MGSwipeTableCell * cell = [self.tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    if (!cell) {
+        cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     }
-
-    Song *song = [self.appDelegate.userDatabase getSongForIndex:indexPath.row];
-    [cell.textLabel setText:song.metadataStringValue];
-    [song setSongImageInImageView:cell.imageView];
     
+    Song *song = [self.appDelegate.userDatabase getSongForIndex:indexPath.row];
+    
+    cell.textLabel.text = song.metadataStringValue;
+    if (song.album && ![song.album isEqualToString:@""]) {
+        cell.detailTextLabel.text = song.album;
+    } else {
+        cell.detailTextLabel.text = @"RadioAparat";
+    }
+    
+    [song setSongImageInImageView:cell.imageView];
+    cell.delegate = self; //optional
+    
+    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor]]];
+    cell.rightSwipeSettings.transition = MGSwipeTransition3D;
     return cell;
 }
 
@@ -118,5 +117,18 @@
     [tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
+/**
+ * Called when the user clicks a swipe button or when a expandable button is automatically triggered
+ * @return YES to autohide the current swipe buttons
+ **/
+-(BOOL) swipeTableCell:(MGSwipeTableCell*) cell tappedButtonAtIndex:(NSInteger) index direction:(MGSwipeDirection)direction fromExpansion:(BOOL) fromExpansion {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSLog(@"tappedButtonAtIndex: %ld, row: %lu", (long)index, indexPath.row);
+    
+    [self.appDelegate.userDatabase deleteSongForIndex:indexPath.row];
+    
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    return true;
+}
 
 @end

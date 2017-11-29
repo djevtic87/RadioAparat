@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
+#import "MGSwipeTableCell/MGSwipeTableCell.h"
 
 @import FirebaseAuth;
 @import GoogleSignIn;
 
-@interface ProfileViewController : BaseViewController <GIDSignInDelegate, GIDSignInUIDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ProfileViewController : BaseViewController <GIDSignInDelegate, GIDSignInUIDelegate, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 @property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
