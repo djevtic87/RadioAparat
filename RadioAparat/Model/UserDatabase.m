@@ -8,6 +8,7 @@
 
 #import "UserDatabase.h"
 #import "Song.h"
+#import "ProfileViewController.h"
 
 @import FirebaseDatabase;
 @import FirebaseAuth;
@@ -16,7 +17,7 @@
 @property (nonatomic, retain) FIRDatabaseReference *databaseReferenceForUser;
 // Array of liked songs
 @property (nonatomic, retain) NSMutableArray *likedSongs;
-@property (nonatomic, assign) BOOL updateTableView;
+@property (nonatomic, assign) BOOL doNotUpdateTableView;
 @end
 
 @implementation UserDatabase
@@ -38,20 +39,21 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.updateTableView = false;
+        self.doNotUpdateTableView = false;
+        self.likedSongs = [[NSMutableArray alloc] init];
         [self.databaseReferenceForUser observeEventType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
-            //NSLog(@"new data: %@" ,[snapshot.value description]);
+            NSLog(@"new data: %@" ,[snapshot.value description]);
             id value = snapshot.value;
             if (snapshot.value != nil && ![value isKindOfClass:[NSNull class]]) {
-                self.likedSongs = [[NSMutableArray alloc] init];
+                [self.likedSongs removeAllObjects];
                 NSArray* songs = value;
                 for (NSString* s in songs) {
                     Song* song = [[Song alloc] initWithMetadata:s];
                     [self.likedSongs addObject:song];
                 }
                 if (self.tableViewToRefreshOnNewData != nil) {
-                    if (self.updateTableView) {
-                        self.updateTableView = false;
+                    if (self.doNotUpdateTableView) {
+                        self.doNotUpdateTableView = false;
                     } else {
                         [self.tableViewToRefreshOnNewData reloadData];
                     }
@@ -83,20 +85,28 @@
         return false;
     }
     
+    NSUInteger section = 0;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.likedSongs.count inSection:section];
+
+    // New liked song to be added.
     Song* songToAdd = [[Song alloc] initWithMetadata:metadata];
     
-    [songsToStore addObject:songToAdd.metadataStringValue];
+    // Add new song into the stored songs.
+    // We need to add this song before we insert new tableView cell.
     [self.likedSongs addObject:songToAdd];
+    [songsToStore addObject:songToAdd.metadataStringValue];
     
-    NSUInteger section = 0;
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.tableViewToRefreshOnNewData numberOfRowsInSection:section] inSection:section];
-    
+    // Update insert new song into the tableView.
     [self.tableViewToRefreshOnNewData beginUpdates];
     [self.tableViewToRefreshOnNewData insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [self.tableViewToRefreshOnNewData endUpdates];
-    self.updateTableView = true;
     
+    // Do not refresh tableView;
+    self.doNotUpdateTableView = true;
+    
+    // Update firebase database.
     [self.databaseReferenceForUser setValue:songsToStore];
+
     return true;
 }
 
@@ -107,7 +117,7 @@
         [songsToStore addObject:s.metadataStringValue];
     }
     
-    self.updateTableView = true;
+    self.doNotUpdateTableView = true;
     
     [self.databaseReferenceForUser setValue:songsToStore];
 }

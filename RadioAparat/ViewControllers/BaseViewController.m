@@ -41,7 +41,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if ((self.tabBarController.player.rate != 0) && (self.tabBarController.player.error == nil)) {
+    if ([self isAudioPlaying]) {
         [self.tabBarController.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"pause_icon"]];
     } else {
         [self.tabBarController.tabBarView changeExtraRightTabBarItemWithImage: [UIImage imageNamed:@"play_icon"]];
@@ -55,6 +55,13 @@
 
 - (void)tabBarDidSelectExtraRightItem:(YALFoldingTabBar *)tabBar {
     [self.tabBarController playPause];
+}
+-(BOOL) isAudioPlaying {
+    if ((self.tabBarController.player.rate != 0) && (self.tabBarController.player.error == nil)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 - (void)tabBarDidSelectExtraLeftItem:(YALFoldingTabBar *)tabBar {

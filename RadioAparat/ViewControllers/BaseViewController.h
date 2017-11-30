@@ -13,4 +13,6 @@
 @interface BaseViewController : UIViewController
 @property (nonatomic, weak) MainTabBarControllerViewController *tabBarController;
 @property (nonatomic, weak) AppDelegate *appDelegate;
+
+-(BOOL) isAudioPlaying;
 @end

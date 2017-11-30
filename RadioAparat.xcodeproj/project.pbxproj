@@ -12,6 +12,7 @@
 		D624BF0D1FB5A7880004C97E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0C1FB5A7880004C97E /* Assets.xcassets */; };
 		D624BF101FB5A7880004C97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D624BF0E1FB5A7880004C97E /* LaunchScreen.storyboard */; };
 		D624BF131FB5A7890004C97E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D624BF121FB5A7890004C97E /* main.m */; };
+		D62D6FB61FD00FF600F4ABD8 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D62D6FB51FD00FF600F4ABD8 /* FeedbackViewController.m */; };
 		D68D31BF1FCDABF000542DFF /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = D68D31BE1FCDABF000542DFF /* Song.m */; };
 		D69F84661FCF01D6002A4895 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D69F84651FCF01D6002A4895 /* AboutViewController.m */; };
 		D6A118821FB8F377008F75F9 /* MainTabBarControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D6A118811FB8F377008F75F9 /* MainTabBarControllerViewController.m */; };
@@ -39,6 +40,8 @@
 		D624BF0F1FB5A7880004C97E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D624BF111FB5A7880004C97E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D624BF121FB5A7890004C97E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D62D6FB41FD00FF600F4ABD8 /* FeedbackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		D62D6FB51FD00FF600F4ABD8 /* FeedbackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		D68D31BD1FCDABF000542DFF /* Song.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		D68D31BE1FCDABF000542DFF /* Song.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		D69F84641FCF01D6002A4895 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
@@ -158,6 +161,8 @@
 				D6A118811FB8F377008F75F9 /* MainTabBarControllerViewController.m */,
 				D69F84641FCF01D6002A4895 /* AboutViewController.h */,
 				D69F84651FCF01D6002A4895 /* AboutViewController.m */,
+				D62D6FB41FD00FF600F4ABD8 /* FeedbackViewController.h */,
+				D62D6FB51FD00FF600F4ABD8 /* FeedbackViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				D6A118821FB8F377008F75F9 /* MainTabBarControllerViewController.m in Sources */,
 				D6A2D4AF1FB5D1760085802C /* BaseViewController.m in Sources */,
 				D6A2D4B61FB5F81B0085802C /* InfoPlayView.m in Sources */,
+				D62D6FB61FD00FF600F4ABD8 /* FeedbackViewController.m in Sources */,
 				D6A2D4A81FB5B6070085802C /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

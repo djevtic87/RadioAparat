@@ -31,6 +31,9 @@
     [GIDSignIn sharedInstance].clientID = [FIRApp defaultApp].options.clientID;
     [GIDSignIn sharedInstance].delegate = self;
     [GIDSignIn sharedInstance].uiDelegate = self;
+    
+    // Set tableView that will be refreshed on like.
+    self.appDelegate.userDatabase.tableViewToRefreshOnNewData = self.tableView;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -45,7 +48,6 @@
         [self.tableView setHidden:true];
     }
     
-    self.appDelegate.userDatabase.tableViewToRefreshOnNewData = self.tableView;
     [self.tableView reloadData];
 }
 
@@ -92,25 +94,34 @@
         cell = [[MGSwipeTableCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     }
     
-    Song *song = [self.appDelegate.userDatabase getSongForIndex:indexPath.row];
-    
-    cell.textLabel.text = song.metadataStringValue;
-    if (song.album && ![song.album isEqualToString:@""]) {
-        cell.detailTextLabel.text = song.album;
+    NSLog(@"tableView indexPath.row: %ld, total: %lu", (long)indexPath.row, (unsigned long)[self.appDelegate.userDatabase numberOfStoredSongs]);
+    if (indexPath.row < [self.appDelegate.userDatabase numberOfStoredSongs]) {
+        Song *song = [self.appDelegate.userDatabase getSongForIndex:indexPath.row];
+        
+        cell.textLabel.text = song.metadataStringValue;
+        if (song.album && ![song.album isEqualToString:@""]) {
+            cell.detailTextLabel.text = song.album;
+        } else {
+            cell.detailTextLabel.text = @"RadioAparat";
+        }
+        
+        [song setSongImageInImageView:cell.imageView];
+        cell.delegate = self; //optional
+        
+        cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor]]];
+        cell.rightSwipeSettings.transition = MGSwipeTransition3D;
     } else {
-        cell.detailTextLabel.text = @"RadioAparat";
+        cell.textLabel.text = @"";
+        cell.detailTextLabel.text =  @"";
+        cell.imageView.image = nil;
+        cell.rightButtons = [[NSArray alloc] init];
     }
-    
-    [song setSongImageInImageView:cell.imageView];
-    cell.delegate = self; //optional
-    
-    cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"Delete" backgroundColor:[UIColor redColor]]];
-    cell.rightSwipeSettings.transition = MGSwipeTransition3D;
+
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.appDelegate.userDatabase numberOfStoredSongs];
+    return [self.appDelegate.userDatabase numberOfStoredSongs] + EXTRA_CELLS_IN_TABLEVIEW;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -90,12 +90,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dwn-8C-YRg" firstAttribute="top" secondItem="hkj-Jb-Jf3" secondAttribute="top" id="Cp7-fM-trC"/>
-                            <constraint firstItem="dwn-8C-YRg" firstAttribute="leading" secondItem="hkj-Jb-Jf3" secondAttribute="leading" id="RpF-K0-STL"/>
+                            <constraint firstItem="dwn-8C-YRg" firstAttribute="leading" secondItem="hkj-Jb-Jf3" secondAttribute="leading" id="GtI-qV-iTQ"/>
+                            <constraint firstItem="dwn-8C-YRg" firstAttribute="trailing" secondItem="hkj-Jb-Jf3" secondAttribute="trailing" id="ORl-S7-iaJ"/>
                             <constraint firstItem="hkj-Jb-Jf3" firstAttribute="bottom" secondItem="sKz-tC-eeo" secondAttribute="bottom" constant="139" id="Upn-LI-xQn"/>
-                            <constraint firstItem="dwn-8C-YRg" firstAttribute="bottom" secondItem="hkj-Jb-Jf3" secondAttribute="bottom" id="c1h-QF-0Jf"/>
+                            <constraint firstItem="dwn-8C-YRg" firstAttribute="top" secondItem="hkj-Jb-Jf3" secondAttribute="top" id="YKA-oi-4xF"/>
                             <constraint firstItem="sKz-tC-eeo" firstAttribute="centerX" secondItem="zDi-ga-SBi" secondAttribute="centerX" id="cgb-5U-JSp"/>
-                            <constraint firstItem="dwn-8C-YRg" firstAttribute="trailing" secondItem="hkj-Jb-Jf3" secondAttribute="trailing" id="ozu-Ma-90F"/>
+                            <constraint firstAttribute="bottom" secondItem="dwn-8C-YRg" secondAttribute="bottom" constant="49" id="kYc-Ef-K9o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hkj-Jb-Jf3"/>
                     </view>
@@ -117,7 +117,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Icf-KH-q1t">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Icf-KH-q1t">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -175,207 +175,31 @@
         <!--Feedback-->
         <scene sceneID="LXE-8S-3nm">
             <objects>
-                <viewController title="Feedback" id="pxw-fj-xE5" sceneMemberID="viewController">
+                <viewController title="Feedback" id="pxw-fj-xE5" customClass="FeedbackViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yf7-oN-EiD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h8t-qN-1GC">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dbL-Jo-3aB">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Hi, I’m ">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Dejan">
-                                        <attributes>
-                                            <color key="NSColor" red="0.36788999999999999" green="0.35515999999999998" blue="0.58316000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <url key="NSLink" string="http://www.linkedin.com/in/dejan-jevtic-40bb883b"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                            <color key="NSUnderlineColor" red="0.98824000000000001" green="0.49412" blue="0.058819999999999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">. I run RadioAparat iOS with no employees. Feedback is welcome:
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">	•	</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.36788999999999999" green="0.35515999999999998" blue="0.58316000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="11">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="natural" location="36">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="@RadioAparat">
-                                        <attributes>
-                                            <color key="NSColor" red="0.36788999999999999" green="0.35515999999999998" blue="0.58316000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <url key="NSLink" string="https://twitter.com/RadioAparat"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="11">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="natural" location="36">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content"> on Twitter for quick comments.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="11">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="natural" location="36">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">	•	</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.36788999999999999" green="0.35515999999999998" blue="0.58316000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="11">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="natural" location="36">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="feedback@overcast.fm">
-                                        <attributes>
-                                            <color key="NSColor" red="0.36788999999999999" green="0.35515999999999998" blue="0.58316000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <url key="NSLink" string="mailto:dejanjevtic87@gmail.com"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="11">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="natural" location="36">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=" ">
-                                        <attributes>
-                                            <color key="NSColor" red="0.36788999999999999" green="0.35515999999999998" blue="0.58316000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="11">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="natural" location="36">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">for private feedback.
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" headIndent="36" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="11">
-                                                        <options/>
-                                                    </textTab>
-                                                    <textTab alignment="natural" location="36">
-                                                        <options/>
-                                                    </textTab>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="I try to read every message, but can’t respond to them all.">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica-Bold"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-Thanks for understanding.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <real key="NSKern" value="0.0"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                                <tabStops/>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="h8t-qN-1GC" firstAttribute="top" secondItem="1tH-KX-WrN" secondAttribute="top" id="4yV-r7-Yui"/>
-                            <constraint firstItem="h8t-qN-1GC" firstAttribute="leading" secondItem="1tH-KX-WrN" secondAttribute="leading" id="5L0-sc-luM"/>
-                            <constraint firstItem="h8t-qN-1GC" firstAttribute="bottom" secondItem="1tH-KX-WrN" secondAttribute="bottom" id="BbO-Ee-LH8"/>
-                            <constraint firstItem="h8t-qN-1GC" firstAttribute="trailing" secondItem="1tH-KX-WrN" secondAttribute="trailing" id="TtU-Sn-68a"/>
+                            <constraint firstItem="dbL-Jo-3aB" firstAttribute="bottom" secondItem="1tH-KX-WrN" secondAttribute="bottom" id="AfP-mI-Dj4"/>
+                            <constraint firstItem="dbL-Jo-3aB" firstAttribute="top" secondItem="1tH-KX-WrN" secondAttribute="top" id="Gxz-BU-5Zy"/>
+                            <constraint firstItem="dbL-Jo-3aB" firstAttribute="trailing" secondItem="1tH-KX-WrN" secondAttribute="trailing" id="asq-uI-tRu"/>
+                            <constraint firstItem="dbL-Jo-3aB" firstAttribute="leading" secondItem="1tH-KX-WrN" secondAttribute="leading" id="gKM-Gi-vif"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1tH-KX-WrN"/>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="dbL-Jo-3aB" id="UtQ-R6-FKE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnA-8Q-sAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

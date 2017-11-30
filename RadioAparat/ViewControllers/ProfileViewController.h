@@ -13,6 +13,8 @@
 @import FirebaseAuth;
 @import GoogleSignIn;
 
+#define EXTRA_CELLS_IN_TABLEVIEW 2
+
 @interface ProfileViewController : BaseViewController <GIDSignInDelegate, GIDSignInUIDelegate, UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 @property (weak, nonatomic) IBOutlet GIDSignInButton *signInButton;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
