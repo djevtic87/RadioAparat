@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.productURL = @"https://service7.rumbletalk.net/eC71@d@:/";
+    self.productURL = @"https://www.rumbletalk.com/client/chat.php?eC71@d@:";
     //https://www.rumbletalk.com/client/chat.php?eC71@d@:
     
     NSURL *url = [NSURL URLWithString:self.productURL];
@@ -27,7 +27,10 @@
     [_webView loadRequest:request];
     CGRect frame = self.view.frame;
     frame.origin.y = [UIApplication sharedApplication].statusBarFrame.size.height;
+    //self.tabBar.frame.size.height
+    frame.size.height = frame.size.height - self.tabBarController.tabBar.frame.size.height - self.tabBarController.tabBar.frame.size.height / 2;
     _webView.frame = frame;
+    _webView.scrollView.scrollEnabled = false;
     [self.view addSubview:_webView];
 }
 
