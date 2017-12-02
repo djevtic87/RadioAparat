@@ -10,6 +10,8 @@
 #import <Foundation/Foundation.h>
 #import "Song.h"
 
+#define MAX_NUMBER_OF_LIKED_SONGS 200
+
 @interface UserDatabase : NSObject
 @property (weak, nonatomic) UITableView *tableViewToRefreshOnNewData;
 

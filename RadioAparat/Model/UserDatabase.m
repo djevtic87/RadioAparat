@@ -76,6 +76,10 @@
 }
 
 - (BOOL) storeSongForMetadata:(NSString*)metadata {
+    if (self.likedSongs.count >= MAX_NUMBER_OF_LIKED_SONGS) {
+        return false;
+    }
+    
     NSMutableArray* songsToStore = [[NSMutableArray alloc] init];
     for (Song* s in self.likedSongs) {
         [songsToStore addObject:s.metadataStringValue];

@@ -28,6 +28,7 @@
 
 @interface MainTabBarControllerViewController () {
     InfoPlayView *infoPlayView;
+    AVPlayer* player;
 }
 
 @end
@@ -77,7 +78,7 @@
     // Alloc radio player.
     AVPlayerItem* playerItem = [AVPlayerItem playerItemWithURL:[[NSURL alloc] initWithString:@"http://ca3.rcast.net:8060/"]];
     [playerItem addObserver:self forKeyPath:@"timedMetadata" options:NSKeyValueObservingOptionNew context:nil];
-    self.player = [AVPlayer playerWithPlayerItem:playerItem];
+    player = [AVPlayer playerWithPlayerItem:playerItem];
     
     [self setupNowPlayingInfoCenter];
 }
@@ -96,15 +97,15 @@
     [[remoteCommandCenter playCommand] addTarget:self action:@selector(playPause)];
     [[remoteCommandCenter stopCommand] addTarget:self action:@selector(playPause)];
     
-    [[remoteCommandCenter likeCommand] addTarget:self action:@selector(like)];
+    [[remoteCommandCenter likeCommand] addTarget:self action:@selector(likeCurrentSong)];
 //    [[remoteCommandCenter dislikeCommand] addTarget:self action:@selector(dislike)];
 //    [[remoteCommandCenter bookmarkCommand] addTarget:self action:@selector(bookmark)];
 //    [[remoteCommandCenter ratingCommand] addTarget:self action:@selector(ratingCommand)];
 }
 
 -(void)playPause {
-    if ((self.player.rate != 0) && (self.player.error == nil)) {
-        [self.player pause];
+    if ([self isAudioPlaying]) {
+        [player pause];
         [self showInfoView:false];
         
         for (YALTabBarItem *item in self.leftBarItems) {
@@ -116,7 +117,7 @@
             item.rightImage = [UIImage imageNamed:@"play_icon"];
         }
     } else {
-        [self.player play];
+        [player play];
         [self showInfoView:true];
         
         for (YALTabBarItem *item in self.leftBarItems) {
@@ -131,9 +132,17 @@
 }
 
 
--(BOOL) like {
+-(BOOL) likeCurrentSong {
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     return [appDelegate.userDatabase storeSongForMetadata:infoPlayView.titleLabel.text];
+}
+
+-(BOOL)isAudioPlaying {
+    if ((player.rate != 0) && (player.error == nil)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 - (void) observeValueForKeyPath:(NSString*)keyPath ofObject:(id)object
@@ -190,7 +199,7 @@
                      }
                      completion:^(BOOL finished) {
                          // whatever you need to do when animations are complete
-                         if ((self.player.rate != 0) && (self.player.error == nil)) {
+                         if ([self isAudioPlaying]) {
                              [self showInfoView:true];
                          } else {
                              [self showInfoView:false];

@@ -17,7 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.productURL = @"https://www.rumbletalk.com/client/chat.php?eC71@d@:";
-    //https://www.rumbletalk.com/client/chat.php?eC71@d@:
     
     NSURL *url = [NSURL URLWithString:self.productURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];

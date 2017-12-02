@@ -15,6 +15,7 @@
 @implementation FeedbackViewController
 @synthesize textView;
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -23,7 +24,7 @@
     
     NSURL *URL1 = [NSURL URLWithString: @"http://www.linkedin.com/in/dejan-jevtic-40bb883b"];
     NSURL *URL2 = [NSURL URLWithString: @"https://twitter.com/radioaparat"];
-    NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Hi, I’m Dejan. I run RadioAparat iOS app with no employees. Feedback is welcome:\n\t•    @RadioAparat on Twitter for quick comments.\n\t•    dejanjevtic87@gmail.com for private feedback.\nI try to read every message, but can’t respond to them all.\n\nThanks for understanding." attributes:fontAttributes];
+    NSMutableAttributedString * str = [[NSMutableAttributedString alloc] initWithString:@"Hi, I’m Dejan. I run RadioAparat iOS app with no employees. Feedback is welcome:\n\t•    @RadioAparat on Twitter for quick comments.\n\t•    radio@radioaparat.com for private feedback.\nI try to read every message, but can’t respond to them all.\n\nThanks for understanding." attributes:fontAttributes];
 
     
     [str addAttribute: NSLinkAttributeName value:URL1 range: [str.string rangeOfString:@"Dejan"]];

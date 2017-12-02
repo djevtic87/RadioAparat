@@ -73,10 +73,10 @@
         case 1:
             [cell.textLabel setText:@"Send Feedback"];
             break;
+//        case 2:
+//            [cell.textLabel setText:@"Please Rate RadioAparat"];
+//            break;
         case 2:
-            [cell.textLabel setText:@"Please Rate RadioAparat"];
-            break;
-        case 3:
             [cell.textLabel setText:@"About"];
             [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
             break;
@@ -89,7 +89,7 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 3;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -139,7 +139,7 @@
             case 1:
                 [self performSegueWithIdentifier:@"showFeedback" sender:self];
                 break;
-            case 3:
+            case 2:
                 [self performSegueWithIdentifier:@"showAbout" sender:self];
                 break;
             default:

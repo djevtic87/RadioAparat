@@ -14,11 +14,11 @@
 
 @interface MainTabBarControllerViewController : YALFoldingTabBarController
 
-@property (nonatomic, strong) AVPlayer* player;
-
 -(void) showInfoView:(BOOL)show;
 
 -(void)playPause;
--(BOOL)like;
+-(BOOL)likeCurrentSong;
+
+-(BOOL)isAudioPlaying;
 
 @end

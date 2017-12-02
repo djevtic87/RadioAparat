@@ -57,27 +57,40 @@
     [self.tabBarController playPause];
 }
 -(BOOL) isAudioPlaying {
-    if ((self.tabBarController.player.rate != 0) && (self.tabBarController.player.error == nil)) {
-        return true;
-    } else {
-        return false;
-    }
+    return [self.tabBarController isAudioPlaying];
 }
 
 - (void)tabBarDidSelectExtraLeftItem:(YALFoldingTabBar *)tabBar {
-    if (![self.tabBarController like]) {
+    BOOL showAlert = false;
+    NSString *msg;
+    NSString *title;
+    if ([self.appDelegate.userDatabase numberOfStoredSongs] < MAX_NUMBER_OF_LIKED_SONGS) {
+        if (![self.tabBarController likeCurrentSong]) {
+            msg = @"You already liked the song!";
+            title = @"Error";
+            showAlert = true;
+        }
+    } else {
+        msg = [NSString stringWithFormat:@"You can not like more then %d songs.", MAX_NUMBER_OF_LIKED_SONGS];
+        title = @"Maximum number of liked songs.";
+        showAlert = true;
+    }
+    
+
+    
+    if (showAlert) {
         UIAlertController * alert = [UIAlertController
-                                     alertControllerWithTitle:@"Error"
-                                     message:@"You already liked the song!"
+                                     alertControllerWithTitle:title
+                                     message:msg
                                      preferredStyle:UIAlertControllerStyleAlert];
         
         //Add Buttons
         
         UIAlertAction* okButton = [UIAlertAction
-                                    actionWithTitle:@"OK"
-                                    style:UIAlertActionStyleDefault
-                                    handler:^(UIAlertAction * action) {
-                                    }];
+                                   actionWithTitle:@"OK"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction * action) {
+                                   }];
         
         //Add your buttons to alert controller
         
