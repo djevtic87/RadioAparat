@@ -26,26 +26,11 @@
     [_webView loadRequest:request];
     CGRect frame = self.view.frame;
     frame.origin.y = [UIApplication sharedApplication].statusBarFrame.size.height;
-    //self.tabBar.frame.size.height
-    frame.size.height = frame.size.height - self.tabBarController.tabBar.frame.size.height - self.tabBarController.tabBar.frame.size.height / 2;
+    //frame.size.height = frame.size.height - self.tabBarController.tabBar.frame.size.height - self.tabBarController.tabBar.frame.size.height / 2;
+    frame.size.height = frame.size.height - 2 * self.tabBarController.tabBar.frame.size.height;
     _webView.frame = frame;
     _webView.scrollView.scrollEnabled = false;
     [self.view addSubview:_webView];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

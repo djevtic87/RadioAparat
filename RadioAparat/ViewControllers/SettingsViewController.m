@@ -133,6 +133,8 @@
                     [view addAction:logOut];
                     [view addAction:cancel];
                     [self presentViewController:view animated:YES completion:nil];
+                } else {
+                    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2];
                 }
             }
                 break;
@@ -148,49 +150,5 @@
     }
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
 }
-
-//- (void)encodeWithCoder:(nonnull NSCoder *)aCoder { 
-//    <#code#>
-//}
-//
-//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection { 
-//    <#code#>
-//}
-//
-//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container { 
-//    <#code#>
-//}
-//
-//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize { 
-//    <#code#>
-//}
-//
-//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container { 
-//    <#code#>
-//}
-//
-//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator { 
-//    <#code#>
-//}
-//
-//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator { 
-//    <#code#>
-//}
-//
-//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator { 
-//    <#code#>
-//}
-//
-//- (void)setNeedsFocusUpdate { 
-//    <#code#>
-//}
-//
-//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context { 
-//    <#code#>
-//}
-//
-//- (void)updateFocusIfNeeded { 
-//    <#code#>
-//}
 
 @end
