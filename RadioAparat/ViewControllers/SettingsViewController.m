@@ -134,7 +134,7 @@
                     [view addAction:cancel];
                     [self presentViewController:view animated:YES completion:nil];
                 } else {
-                    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:2];
+                    self.tabBarController.selectedIndex = 2;
                 }
             }
                 break;
